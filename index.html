@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anil Yalamati | AI/ML Developer Portfolio</title>
+  <meta name="description" content="Personal developer portfolio of Anil Yalamati, a B.Tech AI/ML student and developer exploring artificial intelligence, machine learning, and thoughtful web experiences including EasyTrip, Deepfake Detection, and ML Recommendation Systems." />
+  <meta name="author" content="Anil Yalamati" />
+  <meta name="theme-color" content="#0A0B0D" />
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Anil Yalamati | AI/ML Developer Portfolio" />
+  <meta property="og:description" content="Building intelligent experiences with purpose. Explore AI/ML and web development projects by Anil Yalamati, including EasyTrip, Deepfake Detection, and Machine-Learning Recommendation Systems." />
+  <meta property="og:site_name" content="Anil Yalamati Portfolio" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Anil Yalamati | AI/ML Developer Portfolio" />
+  <meta name="twitter:description" content="B.Tech AI/ML student and developer building practical intelligent systems and digital product experiences." />
+
+  <!-- Monogram Favicon (AY) -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS & Custom Theme Config -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="js/tailwind.config.js"></script>
+
+  <!-- Custom Editorial Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-charcoal-950 text-warm-50 selection:bg-lime selection:text-charcoal-950">
+
+  <!-- Skip to Content for Keyboard Accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-lime focus:text-charcoal-950 focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:font-semibold focus:rounded">
+    Skip to main content
+  </a>
+
+  <!-- Subtle Film Grain -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Optional Desktop Cursor Follower -->
+  <div id="cursor-follower" class="hidden lg:block" aria-hidden="true"></div>
+
+  <!-- ==========================================
+       3. STICKY RESPONSIVE NAVIGATION
+       ========================================== -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 h-20 flex items-center justify-between">
+      <!-- Brand / AY Monogram -->
+      <a href="#home" class="group flex items-center gap-3.5 focus:outline-none" aria-label="Anil Yalamati — Back to top">
+        <div class="w-9 h-9 rounded bg-charcoal-900 border border-white/15 group-hover:border-lime/70 flex items-center justify-center transition-colors duration-300">
+          <span class="font-display font-bold text-sm tracking-tighter text-warm-50">
+            A<span class="text-lime">Y</span>
+          </span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-semibold text-sm tracking-[0.14em] text-warm-50">ANIL YALAMATI</span>
+          <span class="font-mono text-[10px] tracking-widest text-warm-400 uppercase hidden sm:inline">AI / ML &amp; Developer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8" aria-label="Primary Navigation">
+        <a href="#home" data-section="home" class="nav-link active font-mono text-xs uppercase tracking-[0.14em] text-warm-300 hover:text-warm-50 py-1">Home</a>
+        <a href="#about" data-section="about" class="nav-link font-mono text-xs uppercase tracking-[0.14em] text-warm-300 hover:text-warm-50 py-1">About</a>
+        <a href="#work" data-section="work" class="nav-link font-mono text-xs uppercase tracking-[0.14em] text-warm-300 hover:text-warm-50 py-1">Work</a>
+        <a href="#skills" data-section="skills" class="nav-link font-mono text-xs uppercase tracking-[0.14em] text-warm-300 hover:text-warm-50 py-1">Skills</a>
+        <a href="#journey" data-section="journey" class="nav-link font-mono text-xs uppercase tracking-[0.14em] text-warm-300 hover:text-warm-50 py-1">Journey</a>
+        <a href="#contact" data-section="contact" class="nav-link font-mono text-xs uppercase tracking-[0.14em] text-warm-300 hover:text-warm-50 py-1">Contact</a>
+      </nav>
+
+      <!-- Right Action: GitHub Code Profile + Conditional Resume Slot -->
+      <div class="hidden md:flex items-center gap-3">
+        <!-- Dynamic Resume Slot (Rendered by JS only when PORTFOLIO_CONFIG.resumeUrl is populated) -->
+        <div id="nav-resume-slot"></div>
+
+        <a href="https://github.com/Anilyalamati" target="_blank" rel="noopener noreferrer"
+           class="group inline-flex items-center gap-2 px-4 py-2 rounded border border-white/15 hover:border-lime/60 bg-charcoal-900/70 hover:bg-charcoal-850 text-xs font-mono uppercase tracking-wider text-warm-50 transition-all duration-300">
+          <span>GitHub</span>
+          <svg class="w-3.5 h-3.5 text-lime btn-arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Trigger -->
+      <button id="mobile-menu-btn" type="button"
+              class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded border border-white/15 text-warm-50 hover:border-lime/60 transition-colors"
+              aria-expanded="false" aria-controls="mobile-menu-drawer" aria-label="Toggle navigation menu">
+        <svg id="menu-icon-open" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M10 17h10" />
+        </svg>
+        <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu-drawer" class="md:hidden hidden bg-charcoal-950/95 backdrop-blur-xl border-b border-white/10">
+      <nav class="max-w-7xl mx-auto px-5 py-6 flex flex-col gap-4" aria-label="Mobile Navigation">
+        <a href="#home" class="mobile-nav-link flex items-center justify-between py-2.5 border-b border-white/5 font-display text-lg text-warm-50">
+          <span>Home</span>
+          <span class="font-mono text-xs text-lime">00</span>
+        </a>
+        <a href="#about" class="mobile-nav-link flex items-center justify-between py-2.5 border-b border-white/5 font-display text-lg text-warm-300 hover:text-warm-50">
+          <span>About</span>
+          <span class="font-mono text-xs text-warm-400">01</span>
+        </a>
+        <a href="#work" class="mobile-nav-link flex items-center justify-between py-2.5 border-b border-white/5 font-display text-lg text-warm-300 hover:text-warm-50">
+          <span>Work</span>
+          <span class="font-mono text-xs text-warm-400">02</span>
+        </a>
+        <a href="#skills" class="mobile-nav-link flex items-center justify-between py-2.5 border-b border-white/5 font-display text-lg text-warm-300 hover:text-warm-50">
+          <span>Skills</span>
+          <span class="font-mono text-xs text-warm-400">03</span>
+        </a>
+        <a href="#journey" class="mobile-nav-link flex items-center justify-between py-2.5 border-b border-white/5 font-display text-lg text-warm-300 hover:text-warm-50">
+          <span>Journey</span>
+          <span class="font-mono text-xs text-warm-400">04</span>
+        </a>
+        <a href="#contact" class="mobile-nav-link flex items-center justify-between py-2.5 border-b border-white/5 font-display text-lg text-warm-300 hover:text-warm-50">
+          <span>Contact</span>
+          <span class="font-mono text-xs text-warm-400">05</span>
+        </a>
+        <div class="pt-3 flex flex-wrap items-center gap-3">
+          <a href="https://github.com/Anilyalamati" target="_blank" rel="noopener noreferrer"
+             class="flex-1 text-center py-2.5 px-4 rounded border border-white/15 font-mono text-xs uppercase tracking-wider text-warm-50 hover:border-lime">
+            GitHub Profile ↗
+          </a>
+          <a href="https://linkedin.com/in/anilyalamati/" target="_blank" rel="noopener noreferrer"
+             class="flex-1 text-center py-2.5 px-4 rounded bg-lime text-charcoal-950 font-mono text-xs font-semibold uppercase tracking-wider">
+            LinkedIn ↗
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ==========================================
+         4. CINEMATIC HERO SECTION
+         ========================================== -->
+    <section id="home" class="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 flex flex-col justify-between overflow-hidden border-b border-white/10">
+      <!-- Subtle Ambient Radial Lighting -->
+      <div class="pointer-events-none absolute -top-40 right-1/4 w-[34rem] h-[34rem] rounded-full bg-lime/5 blur-[130px]" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute bottom-10 left-10 w-[26rem] h-[26rem] rounded-full bg-white/[0.02] blur-[110px]" aria-hidden="true"></div>
+
+      <!-- Interactive Abstract Topological / Vector Lattice Canvas -->
+      <div class="pointer-events-none absolute inset-0 z-0 opacity-75">
+        <canvas id="hero-lattice-canvas" class="w-full h-full block" aria-hidden="true"></canvas>
+      </div>
+
+      <!-- Editorial Top Meta Strip -->
+      <div class="relative z-10 max-w-7xl w-full mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-white/10">
+          <div class="inline-flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-lime animate-pulse" aria-hidden="true"></span>
+            <p class="font-mono text-xs sm:text-sm tracking-[0.2em] uppercase text-lime font-medium">
+              AI / MACHINE LEARNING / DEVELOPMENT
+            </p>
+          </div>
+          <div class="font-mono text-xs text-warm-400 tracking-wider uppercase hidden sm:block">
+            B.TECH AI &amp; ML &mdash; PORTFOLIO EDITION
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Hero Asymmetric Composition -->
+      <div class="relative z-10 max-w-7xl w-full mx-auto px-5 sm:px-8 lg:px-12 my-auto py-12 md:py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-end">
+          <!-- Headline Column (8 cols) -->
+          <div class="lg:col-span-8">
+            <h1 class="hero-headline text-warm-50 tracking-tight">
+              <span class="block reveal-item" style="transition-delay: 60ms;">Building</span>
+              <span class="block reveal-item text-warm-50" style="transition-delay: 140ms;">
+                intelligent <span class="text-lime font-normal italic">experiences</span>
+              </span>
+              <span class="block reveal-item" style="transition-delay: 220ms;">with purpose.</span>
+            </h1>
+          </div>
+
+          <!-- Supporting Copy & Actions Column (4 cols) -->
+          <div class="lg:col-span-4 flex flex-col justify-end">
+            <p class="reveal-item text-base sm:text-lg text-warm-300 leading-relaxed mb-8 max-w-md" style="transition-delay: 300ms;">
+              I'm an AI/ML student and developer exploring how artificial intelligence, machine learning, and thoughtful design can turn ideas into useful digital experiences.
+            </p>
+
+            <!-- Primary & Secondary CTAs -->
+            <div class="reveal-item flex flex-col sm:flex-row lg:flex-col xl:flex-row items-stretch sm:items-center gap-3.5" style="transition-delay: 380ms;">
+              <a href="#work"
+                 class="group inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded bg-lime text-charcoal-950 font-display font-semibold text-sm tracking-wide hover:bg-lime-dim active:scale-[0.99] transition-all duration-200">
+                <span>Explore My Work</span>
+                <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M8 3v10M8 13l-4-4M8 13l4-4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+
+              <a href="https://linkedin.com/in/anilyalamati/" target="_blank" rel="noopener noreferrer"
+                 class="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded border border-white/20 bg-charcoal-900/80 hover:bg-charcoal-850 hover:border-warm-50/40 text-warm-50 font-display font-medium text-sm tracking-wide active:scale-[0.99] transition-all duration-200">
+                <span>Connect With Me</span>
+                <svg class="w-3.5 h-3.5 text-lime btn-arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                  <path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Hero Architecture Bar & Understated Scroll Indicator -->
+      <div class="relative z-10 max-w-7xl w-full mx-auto px-5 sm:px-8 lg:px-12 pt-6 border-t border-white/10">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="flex flex-wrap items-center gap-x-8 gap-y-2 text-xs font-mono text-warm-400">
+            <div>
+              <span class="text-warm-300">FOCUS //</span> APPLIED AI, COMPUTER VISION &amp; WEB SYSTEMS
+            </div>
+            <div class="hidden md:block">
+              <span class="text-warm-300">FEATURED //</span> EASYTRIP &bull; DEEPFAKE ANALYSIS &bull; ML RECOMMENDER
+            </div>
+          </div>
+
+          <a href="#work" class="group inline-flex items-center gap-3 text-xs font-mono uppercase tracking-[0.18em] text-warm-300 hover:text-lime transition-colors" aria-label="Scroll to Selected Work">
+            <span>Scroll</span>
+            <span class="w-[1px] h-7 bg-white/15 overflow-hidden relative inline-block">
+              <span class="absolute inset-0 bg-lime scroll-line-anim"></span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         6. FEATURED PROJECTS — PRIMARY FOCUS
+         ========================================== -->
+    <section id="work" class="py-24 md:py-32 border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <!-- Section Header -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-14 border-b border-white/10 items-end">
+          <div class="lg:col-span-7 reveal-item">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-mono text-xs text-lime uppercase tracking-[0.2em]">01 // SELECTED WORK</span>
+              <span class="h-[1px] w-10 bg-lime/40"></span>
+            </div>
+            <h2 class="section-headline text-warm-50">
+              Ideas turned into experiences.
+            </h2>
+          </div>
+          <div class="lg:col-span-5 reveal-item">
+            <p class="text-warm-300 text-base sm:text-lg leading-relaxed">
+              A selection of projects exploring intelligent systems, practical problem-solving, and digital product experiences.
+            </p>
+          </div>
+        </div>
+
+        <!-- Category Filter Controls -->
+        <div class="py-6 flex flex-wrap items-center justify-between gap-4 border-b border-white/10">
+          <div class="flex flex-wrap items-center gap-2" role="tablist" aria-label="Filter featured projects">
+            <button type="button" data-project-filter="all"
+                    class="project-filter-btn px-3.5 py-1.5 rounded text-xs font-mono uppercase tracking-wider bg-lime text-charcoal-950 font-semibold transition-all">
+              All Selected (03)
+            </button>
+            <button type="button" data-project-filter="ai-web"
+                    class="project-filter-btn px-3.5 py-1.5 rounded text-xs font-mono uppercase tracking-wider bg-charcoal-900 text-warm-300 border border-white/10 hover:border-white/30 transition-all">
+              Intelligent Web Product
+            </button>
+            <button type="button" data-project-filter="computer-vision"
+                    class="project-filter-btn px-3.5 py-1.5 rounded text-xs font-mono uppercase tracking-wider bg-charcoal-900 text-warm-300 border border-white/10 hover:border-white/30 transition-all">
+              Computer Vision &amp; Media
+            </button>
+            <button type="button" data-project-filter="machine-learning"
+                    class="project-filter-btn px-3.5 py-1.5 rounded text-xs font-mono uppercase tracking-wider bg-charcoal-900 text-warm-300 border border-white/10 hover:border-white/30 transition-all">
+              Applied Machine Learning
+            </button>
+          </div>
+          <div class="font-mono text-xs text-warm-400">
+            Interactive interface previews enabled &mdash; select modes inside each showcase
+          </div>
+        </div>
+
+        <!-- ==========================================
+             PROJECT 01 — EASYTRIP (FLAGSHIP SHOWCASE)
+             ========================================== -->
+        <article id="project-easytrip" data-project-category="ai-web" class="project-card-frame py-16 md:py-24 border-b border-white/10">
+          <!-- Top Meta Row -->
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-8 reveal-item">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-sm text-lime font-medium">PROJECT 01 // FLAGSHIP SHOWCASE</span>
+              <span class="px-2.5 py-0.5 rounded bg-lime/10 border border-lime/30 font-mono text-[11px] text-lime uppercase tracking-wider">
+                Live Web Deployment
+              </span>
+            </div>
+            <div class="font-mono text-xs text-warm-400 uppercase tracking-widest">
+              AI-POWERED TRAVEL COMPANION &amp; ROUTE SAFETY CONCEPT
+            </div>
+          </div>
+
+          <!-- Flagship Editorial Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            <!-- Left Narrative & Architecture Column (5 cols) -->
+            <div class="lg:col-span-5 flex flex-col justify-between space-y-8 reveal-item">
+              <div>
+                <h3 class="font-display text-3xl sm:text-4xl font-semibold text-warm-50 tracking-tight mb-4">
+                  EasyTrip
+                </h3>
+                <p class="text-warm-300 text-base leading-relaxed mb-6">
+                  An AI-powered travel companion concept focused on personalized travel planning, structured itinerary generation, and safer journeys. Designed to bridge destination discovery with practical route-awareness in a clean, accessible web interface.
+                </p>
+
+                <!-- Problem & Solution Breakdown -->
+                <div class="space-y-4 border-t border-white/10 pt-6">
+                  <div>
+                    <h4 class="font-mono text-xs uppercase tracking-wider text-lime mb-1.5">Problem Addressed</h4>
+                    <p class="text-sm text-warm-300 leading-relaxed">
+                      Conventional trip tools fragment destination research, daily pacing, and traveler safety into disconnected tabs—forcing travelers to piece together itineraries without route-safety context or quick emergency readiness.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 class="font-mono text-xs uppercase tracking-wider text-lime mb-1.5">Implemented &amp; Explored Solution</h4>
+                    <p class="text-sm text-warm-300 leading-relaxed">
+                      Delivers an interactive web platform on Vercel featuring preference-guided destination and itinerary workflows alongside conceptual modules for route-safety evaluation and emergency assistance access.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Key Feature Pillars (Verified Live UI vs Concept Architecture) -->
+              <div class="bg-charcoal-900/90 border border-white/10 rounded p-5 space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-xs uppercase tracking-wider text-warm-50">Feature Architecture</span>
+                  <span class="font-mono text-[11px] text-warm-400">Interactive Web Concept</span>
+                </div>
+                <ul class="space-y-2 text-xs sm:text-sm text-warm-300">
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-lime font-mono mt-0.5">+</span>
+                    <span><strong class="text-warm-50 font-medium">Travel Preference Inputs:</strong> Captures trip style, duration, budget pacing, and interest themes to tailor recommendations.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-lime font-mono mt-0.5">+</span>
+                    <span><strong class="text-warm-50 font-medium">Personalized Suggestions &amp; Itinerary Planning:</strong> Organizes day-by-day destination sequences and curated activity blocks.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-lime font-mono mt-0.5">+</span>
+                    <span><strong class="text-warm-50 font-medium">Route-Safety &amp; Emergency Assistance Concepts:</strong> Explores safe-corridor awareness, transit checkpoints, and rapid emergency-contact workflows.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Confirmed Technology Stack -->
+              <div>
+                <h4 class="font-mono text-xs uppercase tracking-wider text-warm-400 mb-3">Confirmed Technology Stack</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-100">Modern Web Frontend</span>
+                  <span class="px-3 py-1 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-100">JavaScript / Interactive UI</span>
+                  <span class="px-3 py-1 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-100">Responsive CSS Grid</span>
+                  <span class="px-3 py-1 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-100">AI Travel Workflow Design</span>
+                  <span class="px-3 py-1 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-100">Vercel Deployment</span>
+                </div>
+              </div>
+
+              <!-- Verified Action Links -->
+              <div class="pt-2 flex flex-wrap items-center gap-4">
+                <a href="https://easytrip-travel.vercel.app" target="_blank" rel="noopener noreferrer"
+                   class="group inline-flex items-center gap-3 px-6 py-3.5 rounded bg-lime text-charcoal-950 font-display font-semibold text-sm hover:bg-lime-dim transition-all">
+                  <span>Explore EasyTrip</span>
+                  <svg class="w-4 h-4 btn-arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+                <a href="https://github.com/Anilyalamati" target="_blank" rel="noopener noreferrer"
+                   class="group inline-flex items-center gap-2.5 px-5 py-3.5 rounded border border-white/15 hover:border-warm-50/40 bg-charcoal-900 text-warm-50 font-mono text-xs uppercase tracking-wider transition-all">
+                  <span>GitHub Profile</span>
+                  <svg class="w-3.5 h-3.5 text-lime btn-arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Interactive Product-Interface Preview Column (7 cols) -->
+            <div class="lg:col-span-7 clip-reveal reveal-item">
+              <div class="preview-surface rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
+                <!-- Browser Window Top Bar -->
+                <div class="px-4 py-3 bg-charcoal-950 border-b border-white/10 flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-lime/70"></span>
+                    <span class="ml-2 font-mono text-xs text-warm-300 truncate">https://easytrip-travel.vercel.app</span>
+                  </div>
+                  <div class="flex items-center gap-1.5" role="tablist" aria-label="EasyTrip Interface Preview Views">
+                    <button type="button" data-easytrip-tab="planner"
+                            class="easytrip-tab-btn px-2.5 py-1 rounded text-[11px] font-mono bg-lime text-charcoal-950 font-medium">
+                      01. Itinerary &amp; Preferences
+                    </button>
+                    <button type="button" data-easytrip-tab="safety"
+                            class="easytrip-tab-btn px-2.5 py-1 rounded text-[11px] font-mono bg-charcoal-850 text-warm-300 hover:text-warm-50">
+                      02. Route Safety
+                    </button>
+                    <button type="button" data-easytrip-tab="emergency"
+                            class="easytrip-tab-btn px-2.5 py-1 rounded text-[11px] font-mono bg-charcoal-850 text-warm-300 hover:text-warm-50">
+                      03. Emergency Assist
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Interactive EasyTrip Product Interface Surface -->
+                <div class="p-6 sm:p-8 bg-gradient-to-b from-charcoal-900 via-charcoal-900 to-charcoal-950">
+                  <!-- View 1: Itinerary & Travel Preferences -->
+                  <div id="easytrip-view-planner" class="space-y-6">
+                    <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-white/10">
+                      <div>
+                        <span class="font-mono text-[11px] text-lime uppercase tracking-widest">AI COMPANION WORKSPACE</span>
+                        <h4 class="font-display text-xl font-semibold text-warm-50 mt-0.5">Personalized Journey Synthesis</h4>
+                      </div>
+                      <a href="https://easytrip-travel.vercel.app" target="_blank" rel="noopener noreferrer"
+                         class="font-mono text-xs text-lime hover:underline">
+                        Open Live App ↗
+                      </a>
+                    </div>
+
+                    <!-- Interactive Preference Selector -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      <div class="p-3.5 rounded bg-charcoal-850 border border-white/10">
+                        <span class="block font-mono text-[10px] uppercase text-warm-400">Travel Style Input</span>
+                        <span class="font-display text-sm font-medium text-warm-50 mt-1 block">Coastal &amp; Highlands</span>
+                      </div>
+                      <div class="p-3.5 rounded bg-charcoal-850 border border-white/10">
+                        <span class="block font-mono text-[10px] uppercase text-warm-400">Pacing Preference</span>
+                        <span class="font-display text-sm font-medium text-warm-50 mt-1 block">Balanced &bull; Daylight Routes</span>
+                      </div>
+                      <div class="p-3.5 rounded bg-charcoal-850 border border-lime/30">
+                        <span class="block font-mono text-[10px] uppercase text-lime">Safety Mode</span>
+                        <span class="font-display text-sm font-medium text-warm-50 mt-1 block">Verified Checkpoints On</span>
+                      </div>
+                    </div>
+
+                    <!-- Structured Itinerary Preview Cards -->
+                    <div class="space-y-3">
+                      <div class="p-4 rounded bg-charcoal-950/90 border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="flex items-start gap-3.5">
+                          <span class="font-mono text-xs px-2 py-1 rounded bg-lime/15 text-lime font-medium">DAY 01</span>
+                          <div>
+                            <h5 class="font-display text-sm font-semibold text-warm-50">Arrival &amp; Coastal Corridor Orientation</h5>
+                            <p class="text-xs text-warm-300 mt-0.5">Curated scenic stops, daylight transit window, and local transit hub check-in.</p>
+                          </div>
+                        </div>
+                        <span class="font-mono text-[11px] text-warm-400 shrink-0">Primary Route</span>
+                      </div>
+
+                      <div class="p-4 rounded bg-charcoal-950/90 border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="flex items-start gap-3.5">
+                          <span class="font-mono text-xs px-2 py-1 rounded bg-white/10 text-warm-50 font-medium">DAY 02</span>
+                          <div>
+                            <h5 class="font-display text-sm font-semibold text-warm-50">Highland Trail &amp; Cultural Discovery</h5>
+                            <p class="text-xs text-warm-300 mt-0.5">Preference-matched viewpoints with offline route caching and weather-aware timing.</p>
+                          </div>
+                        </div>
+                        <span class="font-mono text-[11px] text-lime shrink-0">Safety Checked</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- View 2: Route-Safety Considerations -->
+                  <div id="easytrip-view-safety" class="hidden space-y-6">
+                    <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-white/10">
+                      <div>
+                        <span class="font-mono text-[11px] text-lime uppercase tracking-widest">ROUTE-SAFETY MODULE CONCEPT</span>
+                        <h4 class="font-display text-xl font-semibold text-warm-50 mt-0.5">Corridor &amp; Transit Awareness</h4>
+                      </div>
+                      <span class="px-2.5 py-1 rounded bg-lime/10 font-mono text-xs text-lime">Route Advisory Active</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div class="p-4 rounded bg-charcoal-950 border border-white/10 space-y-2">
+                        <div class="flex items-center justify-between">
+                          <span class="font-mono text-xs text-warm-400">LIGHTING &amp; TIMING</span>
+                          <span class="font-mono text-xs text-lime">Daylight Preferred</span>
+                        </div>
+                        <p class="text-xs text-warm-300 leading-relaxed">
+                          Flags late-evening mountain or isolated segments and suggests schedule adjustments to keep inter-hub transit within high-visibility hours.
+                        </p>
+                      </div>
+                      <div class="p-4 rounded bg-charcoal-950 border border-white/10 space-y-2">
+                        <div class="flex items-center justify-between">
+                          <span class="font-mono text-xs text-warm-400">SAFE STOPWAY NODES</span>
+                          <span class="font-mono text-xs text-warm-50">Verified Rest Hubs</span>
+                        </div>
+                        <p class="text-xs text-warm-300 leading-relaxed">
+                          Highlights transit stretches with reliable cellular coverage, medical proximity, and public transport connectivity along the planned route.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Visual Route Schematic -->
+                    <div class="p-4 rounded bg-charcoal-850 border border-white/10">
+                      <div class="flex items-center justify-between text-xs font-mono text-warm-300 mb-3">
+                        <span>ORIGIN HUB</span>
+                        <span>CHECKPOINT ALPHA</span>
+                        <span>DESTINATION CORRIDOR</span>
+                      </div>
+                      <div class="relative h-2 bg-charcoal-950 rounded-full overflow-hidden">
+                        <div class="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-lime/80 via-lime to-lime/50"></div>
+                      </div>
+                      <p class="font-mono text-[11px] text-warm-400 mt-3">
+                        Concept visualization: Route segments structured around verified transit corridors and traveler check-in intervals.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- View 3: Emergency Assistance Concept -->
+                  <div id="easytrip-view-emergency" class="hidden space-y-6">
+                    <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-white/10">
+                      <div>
+                        <span class="font-mono text-[11px] text-lime uppercase tracking-widest">EMERGENCY ASSISTANCE CONCEPT</span>
+                        <h4 class="font-display text-xl font-semibold text-warm-50 mt-0.5">Rapid Traveler Support Interface</h4>
+                      </div>
+                      <span class="px-2.5 py-1 rounded bg-white/10 font-mono text-xs text-warm-50">Quick-Access Architecture</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                      <div class="p-4 rounded bg-charcoal-950 border border-white/10">
+                        <span class="font-mono text-xs text-lime block mb-1">01 // SOS DISPATCH</span>
+                        <h5 class="font-display text-sm font-medium text-warm-50">Emergency Helpline Directory</h5>
+                        <p class="text-xs text-warm-300 mt-1">Instant access to local emergency responder numbers and tourist assistance desks.</p>
+                      </div>
+                      <div class="p-4 rounded bg-charcoal-950 border border-white/10">
+                        <span class="font-mono text-xs text-lime block mb-1">02 // LOCATION SNAPSHOT</span>
+                        <h5 class="font-display text-sm font-medium text-warm-50">Coordinate &amp; Landmark Share</h5>
+                        <p class="text-xs text-warm-300 mt-1">Formats current route leg and nearest recognizable landmark for trusted contacts.</p>
+                      </div>
+                      <div class="p-4 rounded bg-charcoal-950 border border-white/10">
+                        <span class="font-mono text-xs text-lime block mb-1">03 // NEARBY SAFE ZONES</span>
+                        <h5 class="font-display text-sm font-medium text-warm-50">Medical &amp; Transit Stations</h5>
+                        <p class="text-xs text-warm-300 mt-1">Surfaces nearest hospitals, pharmacies, and 24-hour transit terminals.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Bottom Preview Caption Bar -->
+                  <div class="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-warm-400">
+                    <span>Interactive Product Preview &bull; Switch tabs above to inspect EasyTrip modules</span>
+                    <a href="https://easytrip-travel.vercel.app" target="_blank" rel="noopener noreferrer" class="text-lime hover:underline">
+                      Launch easytrip-travel.vercel.app ↗
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==========================================
+             PROJECT 02 — DEEPFAKE DETECTION
+             ========================================== -->
+        <article id="project-deepfake" data-project-category="computer-vision" class="project-card-frame py-16 md:py-24 border-b border-white/10">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-8 reveal-item">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-sm text-lime font-medium">PROJECT 02 // COMPUTER VISION &amp; MEDIA INTEGRITY</span>
+            </div>
+            <div class="font-mono text-xs text-warm-400 uppercase tracking-widest">
+              IMAGE &amp; VIDEO DEEPFAKE DETECTION WORKFLOW
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            <!-- Left Interactive Media-Upload & Analysis Preview (7 cols on desktop for alternating editorial layout) -->
+            <div class="lg:col-span-7 order-2 lg:order-1 clip-reveal reveal-item">
+              <div class="preview-surface rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
+                <!-- Window Header -->
+                <div class="px-4 py-3 bg-charcoal-950 border-b border-white/10 flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-lime/70"></span>
+                    <span class="ml-2 font-mono text-xs text-warm-300">deepfake-inspection-interface // pipeline-preview</span>
+                  </div>
+                  <div class="flex items-center gap-1.5" role="tablist" aria-label="Deepfake Detection Workflow Stages">
+                    <button type="button" data-deepfake-tab="upload"
+                            class="deepfake-tab-btn px-2.5 py-1 rounded text-[11px] font-mono bg-lime text-charcoal-950 font-medium">
+                      01. Media Upload UI
+                    </button>
+                    <button type="button" data-deepfake-tab="analysis"
+                            class="deepfake-tab-btn px-2.5 py-1 rounded text-[11px] font-mono bg-charcoal-850 text-warm-300 hover:text-warm-50">
+                      02. Frame &amp; Region Inspection
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Interface Body -->
+                <div class="p-6 sm:p-8 bg-charcoal-900">
+                  <!-- Tab 1: Media Upload & Inspection Queue -->
+                  <div id="deepfake-view-upload" class="space-y-5">
+                    <div class="border border-dashed border-white/20 rounded-md p-6 bg-charcoal-950/70 text-center space-y-3">
+                      <div class="w-11 h-11 rounded-full bg-lime/10 border border-lime/30 mx-auto flex items-center justify-center text-lime">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p class="font-display text-sm font-medium text-warm-50">Image &amp; Video Inspection Dropzone</p>
+                        <p class="font-mono text-xs text-warm-400 mt-1">Supports static portrait frames (.PNG, .JPG) &amp; short video streams (.MP4)</p>
+                      </div>
+                      <div class="pt-1">
+                        <button type="button" id="simulate-deepfake-scan-btn"
+                                class="px-4 py-2 rounded bg-charcoal-850 border border-lime/40 hover:border-lime text-xs font-mono text-lime transition-colors">
+                          Inspect Sample Pipeline Stage &rarr;
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Pipeline Steps Bar -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      <div class="p-3.5 rounded bg-charcoal-950 border border-white/10">
+                        <span class="font-mono text-[10px] text-lime uppercase">STAGE 01</span>
+                        <p class="font-display text-xs font-medium text-warm-50 mt-1">Frame Decoding &amp; Face Crop</p>
+                        <p class="text-[11px] text-warm-400 mt-0.5">Isolates facial bounding boxes across keyframes.</p>
+                      </div>
+                      <div class="p-3.5 rounded bg-charcoal-950 border border-white/10">
+                        <span class="font-mono text-[10px] text-lime uppercase">STAGE 02</span>
+                        <p class="font-display text-xs font-medium text-warm-50 mt-1">Spatial Artifact Check</p>
+                        <p class="text-[11px] text-warm-400 mt-0.5">Examines blending boundaries &amp; frequency anomalies.</p>
+                      </div>
+                      <div class="p-3.5 rounded bg-charcoal-950 border border-white/10">
+                        <span class="font-mono text-[10px] text-lime uppercase">STAGE 03</span>
+                        <p class="font-display text-xs font-medium text-warm-50 mt-1">Diagnostic Report UI</p>
+                        <p class="text-[11px] text-warm-400 mt-0.5">Surfaces region observations &amp; frame consistency.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Tab 2: Analysis-Result Layout -->
+                  <div id="deepfake-view-analysis" class="hidden space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-stretch">
+                      <!-- Visual Frame Mesh Representation -->
+                      <div class="sm:col-span-5 rounded bg-charcoal-950 border border-white/10 p-4 flex flex-col justify-between">
+                        <div class="flex items-center justify-between text-[11px] font-mono text-warm-400 mb-3">
+                          <span>ROI // FACE_LANDMARK_GRID</span>
+                          <span class="text-lime">ACTIVE</span>
+                        </div>
+                        <div class="relative aspect-square max-h-44 mx-auto w-full flex items-center justify-center bg-charcoal-900 rounded border border-white/5 overflow-hidden">
+                          <svg class="w-36 h-36 text-lime/60" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1">
+                            <rect x="18" y="18" width="84" height="84" stroke-dasharray="4 3" />
+                            <circle cx="60" cy="60" r="34" stroke-opacity="0.5" />
+                            <line x1="18" y1="60" x2="102" y2="60" stroke-opacity="0.3" />
+                            <line x1="60" y1="18" x2="60" y2="102" stroke-opacity="0.3" />
+                            <circle cx="46" cy="50" r="4" fill="currentColor" />
+                            <circle cx="74" cy="50" r="4" fill="currentColor" />
+                            <path d="M46 74 Q60 82 74 74" stroke-width="1.5" />
+                          </svg>
+                        </div>
+                        <p class="font-mono text-[10px] text-warm-400 mt-3 text-center">
+                          Bounding-box &amp; periocular/jawline boundary inspection view
+                        </p>
+                      </div>
+
+                      <!-- Diagnostic Observations Panel -->
+                      <div class="sm:col-span-7 rounded bg-charcoal-950 border border-white/10 p-4 flex flex-col justify-between space-y-4">
+                        <div>
+                          <span class="font-mono text-[10px] text-lime uppercase tracking-wider">ANALYSIS OUTPUT LAYOUT</span>
+                          <h5 class="font-display text-base font-semibold text-warm-50 mt-0.5">Structural Inspection Indicators</h5>
+                          <p class="text-xs text-warm-300 mt-1">
+                            Displays qualitative pipeline checks across extracted frames without fabricating synthetic confidence claims.
+                          </p>
+                        </div>
+
+                        <div class="space-y-2.5 font-mono text-xs">
+                          <div class="p-2.5 rounded bg-charcoal-900 border border-white/5 flex items-center justify-between">
+                            <span class="text-warm-300">Jawline &amp; Blending Boundary</span>
+                            <span class="text-lime">Inspected</span>
+                          </div>
+                          <div class="p-2.5 rounded bg-charcoal-900 border border-white/5 flex items-center justify-between">
+                            <span class="text-warm-300">Lighting &amp; Specular Consistency</span>
+                            <span class="text-lime">Inspected</span>
+                          </div>
+                          <div class="p-2.5 rounded bg-charcoal-900 border border-white/5 flex items-center justify-between">
+                            <span class="text-warm-300">Inter-Frame Temporal Jitter</span>
+                            <span class="text-warm-50">Video Mode Pipeline</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-warm-400">
+                    <span>Interface Preview &bull; Upload &amp; Diagnostic Workflow Architecture</span>
+                    <button type="button" data-modal-target="deepfake" class="text-lime hover:underline">
+                      Read Technical Workflow Notes &rarr;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Narrative Column (5 cols) -->
+            <div class="lg:col-span-5 order-1 lg:order-2 flex flex-col justify-between space-y-8 reveal-item">
+              <div>
+                <h3 class="font-display text-3xl sm:text-4xl font-semibold text-warm-50 tracking-tight mb-4">
+                  Deepfake Detection Web Application
+                </h3>
+                <p class="text-warm-300 text-base leading-relaxed mb-6">
+                  An applied computer-vision and web project exploring how synthetic or manipulated images and video frames can be inspected through a clean media-upload interface and structured analysis pipeline.
+                </p>
+
+                <div class="space-y-4 border-t border-white/10 pt-6">
+                  <div>
+                    <h4 class="font-mono text-xs uppercase tracking-wider text-lime mb-1.5">Problem Explored</h4>
+                    <p class="text-sm text-warm-300 leading-relaxed">
+                      Rapid advances in generative facial synthesis make visual verification difficult for everyday users, motivating accessible interfaces that break down media inspection into understandable steps.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 class="font-mono text-xs uppercase tracking-wider text-lime mb-1.5">Detection Workflow</h4>
+                    <p class="text-sm text-warm-300 leading-relaxed">
+                      Accepts uploaded image or video files, extracts facial regions across keyframes, preprocesses inputs for deep-learning / computer-vision inspection, and presents structured visual feedback in the browser.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 class="font-mono text-xs uppercase tracking-wider text-lime mb-1.5">Key Technical Challenges</h4>
+                    <p class="text-sm text-warm-300 leading-relaxed">
+                      Distinguishing heavy social-media video compression artifacts from genuine manipulation traces, maintaining consistency across varying lighting conditions, and handling frame-extraction latency cleanly.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Confirmed Technologies -->
+              <div>
+                <h4 class="font-mono text-xs uppercase tracking-wider text-warm-400 mb-3">Technologies Explored &amp; Used</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-100">Python</span>
+                  <span class="px-3 py-1 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-100">Computer Vision / Image Processing</span>
+                  <span class="px-3 py-1 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-100">Deep Learning Feature Extraction</span>
+                  <span class="px-3 py-1 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-100">Web Media Upload Interface</span>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <div class="pt-2 flex flex-wrap items-center gap-4">
+                <button type="button" data-modal-target="deepfake"
+                        class="group inline-flex items-center gap-3 px-6 py-3.5 rounded bg-lime text-charcoal-950 font-display font-semibold text-sm hover:bg-lime-dim transition-all">
+                  <span>Explore Project</span>
+                  <svg class="w-4 h-4 btn-arrow-right transition-transform" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <a href="https://github.com/Anilyalamati" target="_blank" rel="noopener noreferrer"
+                   class="group inline-flex items-center gap-2.5 px-5 py-3.5 rounded border border-white/15 hover:border-warm-50/40 bg-charcoal-900 text-warm-50 font-mono text-xs uppercase tracking-wider transition-all">
+                  <span>View GitHub Profile</span>
+                  <svg class="w-3.5 h-3.5 text-lime btn-arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==========================================
+             PROJECT 03 — MACHINE-LEARNING RECOMMENDATION SYSTEM
+             ========================================== -->
+        <article id="project-recommender" data-project-category="machine-learning" class="project-card-frame pt-16 md:pt-24">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-8 reveal-item">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-sm text-lime font-medium">PROJECT 03 // APPLIED MACHINE LEARNING</span>
+            </div>
+            <div class="font-mono text-xs text-warm-400 uppercase tracking-widest">
+              DATA EXPLORATION &amp; SIMILARITY RANKING SYSTEM
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            <!-- Left Narrative Column (5 cols) -->
+            <div class="lg:col-span-5 flex flex-col justify-between space-y-8 reveal-item">
+              <div>
+                <h3 class="font-display text-3xl sm:text-4xl font-semibold text-warm-50 tracking-tight mb-4">
+                  Machine-Learning Recommendation System
+                </h3>
+                <p class="text-warm-300 text-base leading-relaxed mb-6">
+                  A practical machine-learning project focused on transforming structured datasets and item attributes into relevant, personalized Top-N recommendations through feature engineering and vector similarity modeling.
+                </p>
+
+                <div class="space-y-4 border-t border-white/10 pt-6">
+                  <div>
+                    <h4 class="font-mono text-xs uppercase tracking-wider text-lime mb-1.5">Objective</h4>
+                    <p class="text-sm text-warm-300 leading-relaxed">
+                      Explore how content attributes and interaction signals can be represented mathematically in vector space to retrieve relevant items without relying on manual rules.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 class="font-mono text-xs uppercase tracking-wider text-lime mb-1.5">Approach &amp; Dataset Work</h4>
+                    <p class="text-sm text-warm-300 leading-relaxed">
+                      Covers data cleaning, missing-value handling, text/attribute tokenization, vectorization, and pairwise cosine similarity computation to rank candidate recommendations.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 class="font-mono text-xs uppercase tracking-wider text-lime mb-1.5">Evaluation &amp; Inspection</h4>
+                    <p class="text-sm text-warm-300 leading-relaxed">
+                      Evaluated by inspecting feature-space alignment, Top-N relevance consistency across diverse seed queries, and cold-start behavior on sparse item metadata.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Confirmed Technologies -->
+              <div>
+                <h4 class="font-mono text-xs uppercase tracking-wider text-warm-400 mb-3">Technologies Used</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-100">Python</span>
+                  <span class="px-3 py-1 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-100">Pandas &amp; NumPy</span>
+                  <span class="px-3 py-1 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-100">Scikit-Learn</span>
+                  <span class="px-3 py-1 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-100">Cosine Similarity / Vectorization</span>
+                  <span class="px-3 py-1 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-100">Exploratory Data Analysis</span>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <div class="pt-2 flex flex-wrap items-center gap-4">
+                <button type="button" data-modal-target="recommender"
+                        class="group inline-flex items-center gap-3 px-6 py-3.5 rounded bg-lime text-charcoal-950 font-display font-semibold text-sm hover:bg-lime-dim transition-all">
+                  <span>View Project</span>
+                  <svg class="w-4 h-4 btn-arrow-right transition-transform" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <a href="https://github.com/Anilyalamati" target="_blank" rel="noopener noreferrer"
+                   class="group inline-flex items-center gap-2.5 px-5 py-3.5 rounded border border-white/15 hover:border-warm-50/40 bg-charcoal-900 text-warm-50 font-mono text-xs uppercase tracking-wider transition-all">
+                  <span>GitHub Profile</span>
+                  <svg class="w-3.5 h-3.5 text-lime btn-arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Interactive ML Recommendation Explorer Preview (7 cols) -->
+            <div class="lg:col-span-7 clip-reveal reveal-item">
+              <div class="preview-surface rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
+                <!-- Header -->
+                <div class="px-4 py-3 bg-charcoal-950 border-b border-white/10 flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-lime/70"></span>
+                    <span class="ml-2 font-mono text-xs text-warm-300">ml-recommender // vector-similarity-pipeline</span>
+                  </div>
+                  <div class="flex items-center gap-1.5" role="tablist" aria-label="Recommendation Pipeline Views">
+                    <button type="button" data-rec-mode="content"
+                            class="rec-mode-btn px-2.5 py-1 rounded text-[11px] font-mono bg-lime text-charcoal-950 font-medium">
+                      Content Vector Ranking
+                    </button>
+                    <button type="button" data-rec-mode="pipeline"
+                            class="rec-mode-btn px-2.5 py-1 rounded text-[11px] font-mono bg-charcoal-850 text-warm-300 hover:text-warm-50">
+                      Feature Preprocessing Flow
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Interactive Body -->
+                <div class="p-6 sm:p-8 bg-charcoal-900">
+                  <div id="rec-view-content" class="space-y-5">
+                    <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-white/10">
+                      <div>
+                        <span class="font-mono text-[10px] text-lime uppercase tracking-widest">INTERACTIVE CONCEPT SIMULATOR</span>
+                        <h4 class="font-display text-lg font-semibold text-warm-50">Cosine Similarity Top-N Retrieval</h4>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <label for="rec-seed-select" class="font-mono text-xs text-warm-400">Seed Profile:</label>
+                        <select id="rec-seed-select" aria-label="Select seed profile for recommendation preview"
+                                class="bg-charcoal-950 border border-white/15 rounded px-2.5 py-1 font-mono text-xs text-lime focus:outline-none focus:border-lime">
+                          <option value="ai-systems">Seed A: Applied AI &amp; Neural Workflows</option>
+                          <option value="data-eng">Seed B: Data Cleaning &amp; Matrix Modeling</option>
+                          <option value="web-ux">Seed C: Interactive Web Product Systems</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Dynamic Output List -->
+                    <div id="rec-output-list" class="space-y-3">
+                      <!-- Populated dynamically by JS -->
+                    </div>
+                  </div>
+
+                  <div id="rec-view-pipeline" class="hidden space-y-4">
+                    <div class="pb-3 border-b border-white/10">
+                      <span class="font-mono text-[10px] text-lime uppercase tracking-widest">DATA SCIENCE WORKFLOW</span>
+                      <h4 class="font-display text-lg font-semibold text-warm-50">From Raw Dataset to Ranked Candidates</h4>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 font-mono text-xs">
+                      <div class="p-4 rounded bg-charcoal-950 border border-white/10">
+                        <span class="text-lime block mb-1">01 // DATA INGESTION &amp; CLEANING</span>
+                        <p class="font-sans text-warm-300 text-xs leading-relaxed">
+                          Deduplicating records, handling null metadata fields, and standardizing categorical tags in Pandas.
+                        </p>
+                      </div>
+                      <div class="p-4 rounded bg-charcoal-950 border border-white/10">
+                        <span class="text-lime block mb-1">02 // FEATURE VECTORIZATION</span>
+                        <p class="font-sans text-warm-300 text-xs leading-relaxed">
+                          Converting combined item attributes and descriptors into normalized high-dimensional numerical vectors.
+                        </p>
+                      </div>
+                      <div class="p-4 rounded bg-charcoal-950 border border-white/10">
+                        <span class="text-lime block mb-1">03 // SIMILARITY COMPUTATION</span>
+                        <p class="font-sans text-warm-300 text-xs leading-relaxed">
+                          Computing cosine similarity matrices to measure angular closeness between seed items and candidates.
+                        </p>
+                      </div>
+                      <div class="p-4 rounded bg-charcoal-950 border border-white/10">
+                        <span class="text-lime block mb-1">04 // TOP-N FILTERING</span>
+                        <p class="font-sans text-warm-300 text-xs leading-relaxed">
+                          Sorting similarity scores and returning ranked recommendations for downstream inspection.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-warm-400">
+                    <span>Interactive ML Pipeline Preview &bull; Select a seed profile above</span>
+                    <button type="button" data-modal-target="recommender" class="text-lime hover:underline">
+                      Inspect Architecture Notes &rarr;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         7. ABOUT SECTION
+         ========================================== -->
+    <section id="about" class="py-24 md:py-32 border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <!-- Left Editorial Narrative (7 cols) -->
+          <div class="lg:col-span-7 space-y-8 reveal-item">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="font-mono text-xs text-lime uppercase tracking-[0.2em]">02 // ABOUT</span>
+                <span class="h-[1px] w-10 bg-lime/40"></span>
+              </div>
+              <h2 class="section-headline text-warm-50">
+                Curious by nature. Building by experimentation.
+              </h2>
+            </div>
+
+            <div class="space-y-5 text-warm-300 text-base sm:text-lg leading-relaxed">
+              <p>
+                I'm <strong class="text-warm-50 font-medium">Anil Yalamati</strong>, a B.Tech student specializing in Artificial Intelligence and Machine Learning with a strong focus on turning technical concepts into usable, well-crafted web applications.
+              </p>
+              <p>
+                My work sits at the intersection of intelligent algorithms and human-centered interfaces. Whether designing an AI-assisted travel companion like <a href="https://easytrip-travel.vercel.app" target="_blank" rel="noopener noreferrer" class="text-warm-50 underline decoration-lime/60 hover:text-lime transition-colors">EasyTrip</a>, exploring computer-vision workflows for media authenticity, or structuring machine-learning recommendation pipelines, I learn best by prototyping real systems end to end.
+              </p>
+              <p>
+                Rather than treating machine learning models as isolated notebooks, I enjoy exploring how data preprocessing, model logic, and thoughtful frontend design come together to solve practical problems clearly and responsibly.
+              </p>
+            </div>
+
+            <!-- Three Working Principles -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10">
+              <div class="p-4 rounded bg-charcoal-900/80 border border-white/10">
+                <span class="font-mono text-xs text-lime block mb-1.5">01 // EXPERIMENTATION</span>
+                <h3 class="font-display text-sm font-semibold text-warm-50">Learn by Building</h3>
+                <p class="text-xs text-warm-300 mt-1 leading-relaxed">
+                  Translating classroom AI/ML theory into working prototypes, datasets, and interactive interfaces.
+                </p>
+              </div>
+              <div class="p-4 rounded bg-charcoal-900/80 border border-white/10">
+                <span class="font-mono text-xs text-lime block mb-1.5">02 // CLARITY</span>
+                <h3 class="font-display text-sm font-semibold text-warm-50">Thoughtful Interfaces</h3>
+                <p class="text-xs text-warm-300 mt-1 leading-relaxed">
+                  Designing clean, readable user experiences so technical systems feel intuitive and purposeful.
+                </p>
+              </div>
+              <div class="p-4 rounded bg-charcoal-900/80 border border-white/10">
+                <span class="font-mono text-xs text-lime block mb-1.5">03 // INTEGRITY</span>
+                <h3 class="font-display text-sm font-semibold text-warm-50">Honest Engineering</h3>
+                <p class="text-xs text-warm-300 mt-1 leading-relaxed">
+                  Focusing on verifiable fundamentals, clean code structure, and continuous technical growth.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Replaceable Portrait Architecture Frame (5 cols) -->
+          <div class="lg:col-span-5 reveal-item">
+            <div id="portrait-slot-container" data-slot="portrait-placeholder"
+                 class="rounded-md border border-white/15 bg-charcoal-900 p-6 sm:p-8 relative overflow-hidden">
+              <div class="flex items-center justify-between pb-4 mb-6 border-b border-white/10 font-mono text-xs text-warm-400">
+                <span>IDENTITY // PROFILE CARD</span>
+                <span class="text-lime">B.TECH AI / ML</span>
+              </div>
+
+              <!-- Architectural Monogram Visual (Used when no portrait photo URL is configured) -->
+              <div id="portrait-visual-frame" class="aspect-[4/4] rounded bg-charcoal-950 border border-white/10 flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
+                <div class="absolute inset-0 opacity-20"
+                     style="background-image: radial-gradient(circle at 50% 50%, rgba(212, 255, 51, 0.22), transparent 70%);" aria-hidden="true"></div>
+                <div class="w-24 h-24 rounded-full border border-lime/40 bg-charcoal-900 flex items-center justify-center mb-5 relative z-10">
+                  <span class="font-display text-3xl font-bold tracking-tight text-warm-50">
+                    A<span class="text-lime">Y</span>
+                  </span>
+                </div>
+                <h3 class="font-display text-xl font-semibold text-warm-50 relative z-10">Anil Yalamati</h3>
+                <p class="font-mono text-xs text-warm-300 mt-1 relative z-10">AI/ML Student &amp; Developer</p>
+                <p class="font-mono text-[11px] text-warm-400 mt-4 max-w-xs relative z-10 border-t border-white/10 pt-3">
+                  Replaceable portrait slot &mdash; set <code class="text-lime">PORTFOLIO_CONFIG.portraitUrl</code> to display a personal portrait photograph.
+                </p>
+              </div>
+
+              <!-- Quick Profile Metadata -->
+              <dl class="mt-6 space-y-3 text-xs font-mono">
+                <div class="flex items-center justify-between py-2 border-b border-white/5">
+                  <dt class="text-warm-400">ACADEMIC TRACK</dt>
+                  <dd class="text-warm-50">B.Tech in AI &amp; Machine Learning</dd>
+                </div>
+                <div class="flex items-center justify-between py-2 border-b border-white/5">
+                  <dt class="text-warm-400">CORE INTERESTS</dt>
+                  <dd class="text-warm-50">Applied ML, Vision, Web Products</dd>
+                </div>
+                <div class="flex items-center justify-between py-2">
+                  <dt class="text-warm-400">CODE PROFILE</dt>
+                  <dd>
+                    <a href="https://github.com/Anilyalamati" target="_blank" rel="noopener noreferrer" class="text-lime hover:underline">
+                      github.com/Anilyalamati ↗
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         8. SKILLS SECTION
+         ========================================== -->
+    <section id="skills" class="py-24 md:py-32 border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <!-- Header -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-12 border-b border-white/10 items-end">
+          <div class="lg:col-span-7 reveal-item">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-mono text-xs text-lime uppercase tracking-[0.2em]">03 // CAPABILITIES &amp; STACK</span>
+              <span class="h-[1px] w-10 bg-lime/40"></span>
+            </div>
+            <h2 class="section-headline text-warm-50">
+              Technical foundation &amp; active exploration.
+            </h2>
+          </div>
+          <div class="lg:col-span-5 reveal-item">
+            <p class="text-warm-300 text-base leading-relaxed">
+              Organized transparently by hands-on project usage versus areas currently being studied—without arbitrary percentage bars.
+            </p>
+          </div>
+        </div>
+
+        <!-- Filter & Legend Bar -->
+        <div class="py-6 flex flex-wrap items-center justify-between gap-4 border-b border-white/10">
+          <div class="flex flex-wrap items-center gap-2" role="tablist" aria-label="Filter skills by experience stage">
+            <button type="button" data-skill-filter="all"
+                    class="skill-filter-btn px-3.5 py-1.5 rounded text-xs font-mono uppercase tracking-wider bg-lime text-charcoal-950 font-semibold transition-all">
+              All Technologies
+            </button>
+            <button type="button" data-skill-filter="applied"
+                    class="skill-filter-btn px-3.5 py-1.5 rounded text-xs font-mono uppercase tracking-wider bg-charcoal-900 text-warm-300 border border-white/10 hover:border-white/30 transition-all">
+              Used in Projects
+            </button>
+            <button type="button" data-skill-filter="learning"
+                    class="skill-filter-btn px-3.5 py-1.5 rounded text-xs font-mono uppercase tracking-wider bg-charcoal-900 text-warm-300 border border-white/10 hover:border-white/30 transition-all">
+              Currently Learning
+            </button>
+          </div>
+
+          <div class="flex items-center gap-6 font-mono text-xs">
+            <span class="inline-flex items-center gap-2 text-warm-100">
+              <span class="w-2 h-2 rounded-full bg-lime"></span> Used in Projects
+            </span>
+            <span class="inline-flex items-center gap-2 text-warm-300">
+              <span class="w-2 h-2 rounded-full border border-lime"></span> Currently Learning
+            </span>
+          </div>
+        </div>
+
+        <!-- 5 Skill Categories Editorial Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-12">
+          <!-- Category 1: AI and Machine Learning -->
+          <div class="p-6 sm:p-7 rounded border border-white/10 bg-charcoal-900/60 flex flex-col justify-between reveal-item">
+            <div>
+              <div class="flex items-center justify-between font-mono text-xs text-lime mb-3">
+                <span>01 // DOMAIN</span>
+                <span>AI &amp; ML</span>
+              </div>
+              <h3 class="font-display text-xl font-semibold text-warm-50 mb-4">AI and Machine Learning</h3>
+              <ul class="space-y-3 text-sm">
+                <li data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">Supervised &amp; Unsupervised ML Foundations</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </li>
+                <li data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">Recommendation &amp; Similarity Systems</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </li>
+                <li data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">Computer Vision &amp; Media Inspection Workflows</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </li>
+                <li data-skill-stage="learning" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-300">Deep Learning Architectures (CNNs &amp; Sequence Models)</span>
+                  <span class="font-mono text-[11px] text-warm-400 shrink-0">Learning</span>
+                </li>
+                <li data-skill-stage="learning" class="skill-item flex items-start justify-between gap-3 py-2">
+                  <span class="text-warm-300">Model Serving &amp; End-to-End Inference Pipelines</span>
+                  <span class="font-mono text-[11px] text-warm-400 shrink-0">Learning</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Category 2: Programming and Data Science -->
+          <div class="p-6 sm:p-7 rounded border border-white/10 bg-charcoal-900/60 flex flex-col justify-between reveal-item">
+            <div>
+              <div class="flex items-center justify-between font-mono text-xs text-lime mb-3">
+                <span>02 // DOMAIN</span>
+                <span>DATA &amp; CODE</span>
+              </div>
+              <h3 class="font-display text-xl font-semibold text-warm-50 mb-4">Programming and Data Science</h3>
+              <ul class="space-y-3 text-sm">
+                <li data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">Python Programming</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </li>
+                <li data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">Data Manipulation (Pandas &amp; NumPy)</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </li>
+                <li data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">Feature Engineering &amp; Preprocessing</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </li>
+                <li data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">Exploratory Data Analysis &amp; Visualization</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </li>
+                <li data-skill-stage="learning" class="skill-item flex items-start justify-between gap-3 py-2">
+                  <span class="text-warm-300">Advanced Algorithm Optimization &amp; SQL Workflows</span>
+                  <span class="font-mono text-[11px] text-warm-400 shrink-0">Learning</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Category 3: Web Development -->
+          <div class="p-6 sm:p-7 rounded border border-white/10 bg-charcoal-900/60 flex flex-col justify-between reveal-item">
+            <div>
+              <div class="flex items-center justify-between font-mono text-xs text-lime mb-3">
+                <span>03 // DOMAIN</span>
+                <span>WEB INTERFACES</span>
+              </div>
+              <h3 class="font-display text-xl font-semibold text-warm-50 mb-4">Web Development</h3>
+              <ul class="space-y-3 text-sm">
+                <li data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">Semantic HTML5 &amp; Accessible Markup</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </li>
+                <li data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">Modern CSS3, Tailwind &amp; Responsive Grids</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </li>
+                <li data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">JavaScript (ES6+) &amp; Interactive UI Logic</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </li>
+                <li data-skill-stage="learning" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-300">Component-Driven Frontend Frameworks</span>
+                  <span class="font-mono text-[11px] text-warm-400 shrink-0">Learning</span>
+                </li>
+                <li data-skill-stage="learning" class="skill-item flex items-start justify-between gap-3 py-2">
+                  <span class="text-warm-300">REST APIs &amp; Python Backend Integration</span>
+                  <span class="font-mono text-[11px] text-warm-400 shrink-0">Learning</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Category 4: Developer Tools -->
+          <div class="p-6 sm:p-7 rounded border border-white/10 bg-charcoal-900/60 flex flex-col justify-between reveal-item">
+            <div>
+              <div class="flex items-center justify-between font-mono text-xs text-lime mb-3">
+                <span>04 // DOMAIN</span>
+                <span>TOOLING &amp; CLOUD</span>
+              </div>
+              <h3 class="font-display text-xl font-semibold text-warm-50 mb-4">Developer Tools</h3>
+              <ul class="space-y-3 text-sm">
+                <li data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">Git &amp; GitHub Version Control</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </li>
+                <li data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">Vercel Web Deployment &amp; Hosting</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </li>
+                <li data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">Jupyter Notebooks &amp; Collaborative ML Labs</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </li>
+                <li data-skill-stage="learning" class="skill-item flex items-start justify-between gap-3 py-2">
+                  <span class="text-warm-300">Google Cloud Platform &amp; Cloud AI Foundations</span>
+                  <span class="font-mono text-[11px] text-warm-400 shrink-0">Learning</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Category 5: Design and Prompt Engineering -->
+          <div class="p-6 sm:p-7 rounded border border-white/10 bg-charcoal-900/60 flex flex-col justify-between md:col-span-2 lg:col-span-2 reveal-item">
+            <div>
+              <div class="flex items-center justify-between font-mono text-xs text-lime mb-3">
+                <span>05 // DOMAIN</span>
+                <span>PRODUCT DESIGN &amp; AI WORKFLOWS</span>
+              </div>
+              <h3 class="font-display text-xl font-semibold text-warm-50 mb-4">Design and Prompt Engineering</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
+                <div data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">Structured Prompt Design &amp; Iterative Refinement</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </div>
+                <div data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">UI/UX Layout Architecture &amp; Visual Hierarchy</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </div>
+                <div data-skill-stage="applied" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-50 font-medium">AI-Assisted Prototyping &amp; Product Flows</span>
+                  <span class="font-mono text-[11px] text-lime shrink-0">Applied</span>
+                </div>
+                <div data-skill-stage="learning" class="skill-item flex items-start justify-between gap-3 py-2 border-b border-white/5">
+                  <span class="text-warm-300">LLM Evaluation &amp; Context Grounding Patterns</span>
+                  <span class="font-mono text-[11px] text-warm-400 shrink-0">Learning</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         9. EDUCATION, LEARNING AND CREDENTIALS (JOURNEY)
+         ========================================== -->
+    <section id="journey" class="py-24 md:py-32 border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <!-- Header -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-14 border-b border-white/10 items-end">
+          <div class="lg:col-span-7 reveal-item">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-mono text-xs text-lime uppercase tracking-[0.2em]">04 // JOURNEY &amp; LEARNING</span>
+              <span class="h-[1px] w-10 bg-lime/40"></span>
+            </div>
+            <h2 class="section-headline text-warm-50">
+              Academic path &amp; technical milestones.
+            </h2>
+          </div>
+          <div class="lg:col-span-5 reveal-item">
+            <p class="text-warm-300 text-base leading-relaxed">
+              A progression of undergraduate study in Artificial Intelligence &amp; Machine Learning, hands-on project builds, and ongoing technical exploration.
+            </p>
+          </div>
+        </div>
+
+        <!-- Minimal Editorial Timeline -->
+        <div class="py-14 grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div class="lg:col-span-4 reveal-item">
+            <span class="font-mono text-xs uppercase tracking-widest text-lime block mb-2">TIMELINE // MILESTONES</span>
+            <h3 class="font-display text-2xl font-semibold text-warm-50 mb-3">Education &amp; Applied Builds</h3>
+            <p class="text-sm text-warm-300 leading-relaxed mb-6">
+              Structured to expand cleanly as new coursework, workshops, and verified certifications are completed.
+            </p>
+            <div class="p-4 rounded bg-charcoal-900 border border-white/10 font-mono text-xs text-warm-400 space-y-1.5">
+              <div class="text-warm-50">MODULAR CREDENTIAL LOG</div>
+              <p class="font-sans text-xs text-warm-300 leading-relaxed">
+                New certificates and verified credential IDs can be appended directly to <code class="text-lime">PORTFOLIO_CONFIG</code> as they are earned.
+              </p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-8">
+            <div id="journey-timeline-list" class="relative pl-6 sm:pl-8 border-l border-white/15 space-y-10">
+              <!-- Milestone 1 -->
+              <div class="relative reveal-item">
+                <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-lime border-2 border-charcoal-950"></span>
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                  <span class="font-mono text-xs text-lime uppercase tracking-wider">UNDERGRADUATE DEGREE &bull; IN PROGRESS</span>
+                  <span class="font-mono text-xs text-warm-400">B.Tech Program</span>
+                </div>
+                <h4 class="font-display text-xl font-semibold text-warm-50">
+                  Bachelor of Technology (B.Tech) in Artificial Intelligence &amp; Machine Learning
+                </h4>
+                <p class="text-sm text-warm-300 mt-2 leading-relaxed">
+                  Focusing on core computer science fundamentals, machine learning algorithms, data science pipelines, neural networks, and practical software engineering through project-based learning.
+                </p>
+              </div>
+
+              <!-- Milestone 2 -->
+              <div class="relative reveal-item">
+                <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-charcoal-900 border-2 border-lime"></span>
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                  <span class="font-mono text-xs text-warm-300 uppercase tracking-wider">PRODUCT &amp; WEB DEPLOYMENT MILESTONE</span>
+                  <a href="https://easytrip-travel.vercel.app" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-lime hover:underline">easytrip-travel.vercel.app ↗</a>
+                </div>
+                <h4 class="font-display text-xl font-semibold text-warm-50">
+                  Built &amp; Deployed EasyTrip — AI Travel Companion Concept
+                </h4>
+                <p class="text-sm text-warm-300 mt-2 leading-relaxed">
+                  Designed and shipped a responsive web experience exploring personalized itinerary generation, traveler preference inputs, route-safety considerations, and emergency assistance concepts.
+                </p>
+              </div>
+
+              <!-- Milestone 3 -->
+              <div class="relative reveal-item">
+                <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-charcoal-900 border-2 border-white/40"></span>
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                  <span class="font-mono text-xs text-warm-300 uppercase tracking-wider">APPLIED AI / ML PROJECT EXPLORATION</span>
+                  <a href="https://github.com/Anilyalamati" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-warm-400 hover:text-lime">github.com/Anilyalamati ↗</a>
+                </div>
+                <h4 class="font-display text-xl font-semibold text-warm-50">
+                  Deepfake Media Inspection &amp; ML Recommendation Systems
+                </h4>
+                <p class="text-sm text-warm-300 mt-2 leading-relaxed">
+                  Developed practical implementations exploring image/video deepfake analysis interfaces and vector-similarity machine-learning recommendation pipelines in Python.
+                </p>
+              </div>
+
+              <!-- Milestone 4 -->
+              <div class="relative reveal-item">
+                <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-charcoal-900 border-2 border-white/40"></span>
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                  <span class="font-mono text-xs text-warm-300 uppercase tracking-wider">CONTINUOUS LEARNING &amp; CREDENTIAL SLOT</span>
+                  <span class="font-mono text-xs text-warm-400">Ongoing</span>
+                </div>
+                <h4 class="font-display text-xl font-semibold text-warm-50">
+                  Workshops, Cloud Labs &amp; Technical Certifications
+                </h4>
+                <p class="text-sm text-warm-300 mt-2 leading-relaxed">
+                  Actively expanding hands-on skills across cloud computing, machine-learning model deployment, and modern developer workflows. Verified certificates can be linked here as they are issued.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Separate Learning-Resources Area (Explicitly Distinguished from Earned Credentials) -->
+        <div class="pt-12 border-t border-white/10 reveal-item">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+            <div>
+              <span class="font-mono text-xs text-lime uppercase tracking-[0.18em] block mb-2">
+                OPTIONAL LEARNING ECOSYSTEM // PUBLIC REFERENCE PLATFORMS
+              </span>
+              <h3 class="font-display text-2xl font-semibold text-warm-50">
+                Cloud &amp; AI Learning Resources
+              </h3>
+            </div>
+            <p class="text-xs font-mono text-warm-400 max-w-md">
+              Note: The links below are official Google learning platforms and student resources used for ongoing exploration, not personal earned certificates.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <a href="https://www.skills.google/" target="_blank" rel="noopener noreferrer"
+               class="group p-5 rounded bg-charcoal-900/70 border border-white/10 hover:border-lime/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between font-mono text-xs text-warm-400 mb-3">
+                  <span>RESOURCE 01</span>
+                  <span class="text-lime group-hover:translate-x-0.5 transition-transform">↗</span>
+                </div>
+                <h4 class="font-display text-base font-semibold text-warm-50 group-hover:text-lime transition-colors">Google Skills</h4>
+                <p class="text-xs text-warm-300 mt-2 leading-relaxed">
+                  Hands-on labs, guided learning paths, and technical skill tracks across AI and cloud technologies.
+                </p>
+              </div>
+              <span class="font-mono text-[11px] text-warm-400 mt-4 pt-3 border-t border-white/5 block truncate">
+                skills.google
+              </span>
+            </a>
+
+            <a href="https://cloud.google.com/learn/certificates" target="_blank" rel="noopener noreferrer"
+               class="group p-5 rounded bg-charcoal-900/70 border border-white/10 hover:border-lime/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between font-mono text-xs text-warm-400 mb-3">
+                  <span>RESOURCE 02</span>
+                  <span class="text-lime group-hover:translate-x-0.5 transition-transform">↗</span>
+                </div>
+                <h4 class="font-display text-base font-semibold text-warm-50 group-hover:text-lime transition-colors">Google Cloud Certificates</h4>
+                <p class="text-xs text-warm-300 mt-2 leading-relaxed">
+                  Curriculum reference for cloud engineering, data analytics, and machine learning certificate tracks.
+                </p>
+              </div>
+              <span class="font-mono text-[11px] text-warm-400 mt-4 pt-3 border-t border-white/5 block truncate">
+                cloud.google.com/learn/certificates
+              </span>
+            </a>
+
+            <a href="https://cloud.google.com/learn/training/credentials" target="_blank" rel="noopener noreferrer"
+               class="group p-5 rounded bg-charcoal-900/70 border border-white/10 hover:border-lime/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between font-mono text-xs text-warm-400 mb-3">
+                  <span>RESOURCE 03</span>
+                  <span class="text-lime group-hover:translate-x-0.5 transition-transform">↗</span>
+                </div>
+                <h4 class="font-display text-base font-semibold text-warm-50 group-hover:text-lime transition-colors">Training Credentials</h4>
+                <p class="text-xs text-warm-300 mt-2 leading-relaxed">
+                  Official documentation on Google Cloud skill badges, training pathways, and technical credentials.
+                </p>
+              </div>
+              <span class="font-mono text-[11px] text-warm-400 mt-4 pt-3 border-t border-white/5 block truncate">
+                cloud.google.com/learn/training/credentials
+              </span>
+            </a>
+
+            <a href="https://cloud.google.com/edu/students" target="_blank" rel="noopener noreferrer"
+               class="group p-5 rounded bg-charcoal-900/70 border border-white/10 hover:border-lime/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between font-mono text-xs text-warm-400 mb-3">
+                  <span>RESOURCE 04</span>
+                  <span class="text-lime group-hover:translate-x-0.5 transition-transform">↗</span>
+                </div>
+                <h4 class="font-display text-base font-semibold text-warm-50 group-hover:text-lime transition-colors">Cloud Student Credits</h4>
+                <p class="text-xs text-warm-300 mt-2 leading-relaxed">
+                  Google Cloud for Students program supporting academic experimentation and cloud sandbox builds.
+                </p>
+              </div>
+              <span class="font-mono text-[11px] text-warm-400 mt-4 pt-3 border-t border-white/5 block truncate">
+                cloud.google.com/edu/students
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         10. CONTACT SECTION
+         ========================================== -->
+    <section id="contact" class="py-24 md:py-36 relative overflow-hidden">
+      <div class="pointer-events-none absolute bottom-0 right-1/3 w-[28rem] h-[28rem] rounded-full bg-lime/5 blur-[130px]" aria-hidden="true"></div>
+
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+          <div class="lg:col-span-8 reveal-item">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-mono text-xs text-lime uppercase tracking-[0.2em]">05 // CONTACT</span>
+              <span class="h-[1px] w-10 bg-lime/40"></span>
+            </div>
+            <h2 class="hero-headline text-warm-50 mb-6">
+              Have an interesting idea? <span class="text-lime">Let's connect.</span>
+            </h2>
+            <p class="text-warm-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+              Open to internships, collaborative AI/ML and web development projects, hackathons, and technical conversations. Reach out directly through my verified profiles below.
+            </p>
+
+            <!-- Primary Verified Social CTAs -->
+            <div class="mt-10 flex flex-wrap items-center gap-4">
+              <a href="https://linkedin.com/in/anilyalamati/" target="_blank" rel="noopener noreferrer"
+                 class="group inline-flex items-center gap-3 px-7 py-4 rounded bg-lime text-charcoal-950 font-display font-semibold text-sm sm:text-base hover:bg-lime-dim transition-all">
+                <span>Connect on LinkedIn</span>
+                <svg class="w-4 h-4 btn-arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+
+              <a href="https://github.com/Anilyalamati" target="_blank" rel="noopener noreferrer"
+                 class="group inline-flex items-center gap-3 px-7 py-4 rounded border border-white/20 bg-charcoal-900 hover:bg-charcoal-850 hover:border-warm-50/50 text-warm-50 font-display font-medium text-sm sm:text-base transition-all">
+                <span>Explore GitHub (@Anilyalamati)</span>
+                <svg class="w-4 h-4 text-lime btn-arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                  <path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+
+              <!-- Dynamic Email CTA Slot (Rendered automatically if PORTFOLIO_CONFIG.email is provided) -->
+              <div id="contact-email-slot"></div>
+            </div>
+          </div>
+
+          <!-- Right Directory Card (4 cols) -->
+          <div class="lg:col-span-4 reveal-item">
+            <div class="p-6 rounded border border-white/15 bg-charcoal-900/90 space-y-5">
+              <div class="font-mono text-xs text-lime uppercase tracking-wider">
+                VERIFIED DESTINATIONS
+              </div>
+              <ul class="space-y-3.5 font-mono text-xs">
+                <li class="flex items-center justify-between py-2 border-b border-white/10">
+                  <span class="text-warm-400">LINKEDIN</span>
+                  <a href="https://linkedin.com/in/anilyalamati/" target="_blank" rel="noopener noreferrer" class="text-warm-50 hover:text-lime transition-colors">
+                    /in/anilyalamati ↗
+                  </a>
+                </li>
+                <li class="flex items-center justify-between py-2 border-b border-white/10">
+                  <span class="text-warm-400">GITHUB</span>
+                  <a href="https://github.com/Anilyalamati" target="_blank" rel="noopener noreferrer" class="text-warm-50 hover:text-lime transition-colors">
+                    @Anilyalamati ↗
+                  </a>
+                </li>
+                <li class="flex items-center justify-between py-2">
+                  <span class="text-warm-400">EASYTRIP LIVE</span>
+                  <a href="https://easytrip-travel.vercel.app" target="_blank" rel="noopener noreferrer" class="text-lime hover:underline">
+                    easytrip-travel.vercel.app ↗
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       UNDERSTATED EDITORIAL FOOTER
+       ========================================== -->
+  <footer class="border-t border-white/10 bg-charcoal-950 py-10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <span class="w-7 h-7 rounded bg-charcoal-900 border border-white/15 flex items-center justify-center font-display font-bold text-xs">
+          A<span class="text-lime">Y</span>
+        </span>
+        <span class="font-mono text-xs text-warm-400">
+          &copy; <span id="footer-year">2026</span> Anil Yalamati &mdash; B.Tech AI/ML Developer Portfolio
+        </span>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-6 font-mono text-xs text-warm-400">
+        <button type="button" id="toggle-motion-btn"
+                class="hover:text-lime transition-colors"
+                aria-pressed="false">
+          Motion: Standard
+        </button>
+        <a href="https://github.com/Anilyalamati" target="_blank" rel="noopener noreferrer" class="hover:text-warm-50 transition-colors">GitHub ↗</a>
+        <a href="https://linkedin.com/in/anilyalamati/" target="_blank" rel="noopener noreferrer" class="hover:text-warm-50 transition-colors">LinkedIn ↗</a>
+        <a href="#home" class="text-lime hover:underline">Back to Top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       PROJECT TECHNICAL ARCHITECTURE MODAL
+       ========================================== -->
+  <div id="project-modal" class="fixed inset-0 z-[80] hidden items-center justify-center p-4 sm:p-6 bg-charcoal-950/85 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="max-w-2xl w-full rounded-md border border-white/20 bg-charcoal-900 p-6 sm:p-8 shadow-2xl space-y-6 max-h-[88vh] overflow-y-auto">
+      <div class="flex items-start justify-between gap-4 border-b border-white/10 pb-4">
+        <div>
+          <span id="modal-eyebrow" class="font-mono text-xs text-lime uppercase tracking-wider block">PROJECT ARCHITECTURE</span>
+          <h3 id="modal-title" class="font-display text-2xl font-semibold text-warm-50 mt-1">Project Technical Overview</h3>
+        </div>
+        <button type="button" id="close-modal-btn"
+                class="w-9 h-9 rounded border border-white/15 text-warm-300 hover:text-warm-50 hover:border-lime flex items-center justify-center"
+                aria-label="Close technical overview modal">
+          ✕
+        </button>
+      </div>
+
+      <div id="modal-body" class="space-y-4 text-sm text-warm-300 leading-relaxed">
+        <!-- Populated dynamically by JS -->
+      </div>
+
+      <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+        <a id="modal-github-link" href="https://github.com/Anilyalamati" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-lime text-charcoal-950 font-display font-semibold text-xs uppercase tracking-wider hover:bg-lime-dim transition-colors">
+          <span>Visit GitHub Profile (@Anilyalamati)</span>
+          <span>↗</span>
+        </a>
+        <button type="button" id="modal-secondary-close"
+                class="px-4 py-2.5 rounded border border-white/15 font-mono text-xs text-warm-300 hover:text-warm-50">
+          Close Preview
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       EXTERNAL MODULAR JAVASCRIPT FILES
+       ========================================== -->
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
