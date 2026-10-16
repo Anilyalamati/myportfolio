@@ -34,6 +34,9 @@
 </head>
 <body class="bg-charcoal-950 text-warm-50 selection:bg-lime selection:text-charcoal-950">
 
+  <!-- Top Reading Progress Bar -->
+  <div id="scroll-progress-bar" style="width: 0%;" aria-hidden="true"></div>
+
   <!-- Skip to Content for Keyboard Accessibility -->
   <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-lime focus:text-charcoal-950 focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:font-semibold focus:rounded">
     Skip to main content
@@ -159,7 +162,7 @@
       <div class="relative z-10 max-w-7xl w-full mx-auto px-5 sm:px-8 lg:px-12">
         <div class="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-white/10">
           <div class="inline-flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-lime animate-pulse" aria-hidden="true"></span>
+            <span class="pulse-ring w-2 h-2 rounded-full bg-lime inline-block" aria-hidden="true"></span>
             <p class="font-mono text-xs sm:text-sm tracking-[0.2em] uppercase text-lime font-medium">
               AI / MACHINE LEARNING / DEVELOPMENT
             </p>
@@ -177,7 +180,7 @@
           <div class="lg:col-span-8">
             <h1 class="hero-headline text-warm-50 tracking-tight">
               <span class="block reveal-item" style="transition-delay: 60ms;">Building</span>
-              <span class="block reveal-item text-warm-50" style="transition-delay: 140ms;">
+              <span class="block reveal-item text-warm-50 shimmer-text" style="transition-delay: 140ms;">
                 intelligent <span class="text-lime font-normal italic">experiences</span>
               </span>
               <span class="block reveal-item" style="transition-delay: 220ms;">with purpose.</span>
@@ -193,7 +196,7 @@
             <!-- Primary & Secondary CTAs -->
             <div class="reveal-item flex flex-col sm:flex-row lg:flex-col xl:flex-row items-stretch sm:items-center gap-3.5" style="transition-delay: 380ms;">
               <a href="#work"
-                 class="group inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded bg-lime text-charcoal-950 font-display font-semibold text-sm tracking-wide hover:bg-lime-dim active:scale-[0.99] transition-all duration-200">
+                 class="btn-magnetic group inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded bg-lime text-charcoal-950 font-display font-semibold text-sm tracking-wide hover:bg-lime-dim active:scale-[0.99] transition-all duration-200">
                 <span>Explore My Work</span>
                 <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path d="M8 3v10M8 13l-4-4M8 13l4-4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -201,7 +204,7 @@
               </a>
 
               <a href="https://linkedin.com/in/anilyalamati/" target="_blank" rel="noopener noreferrer"
-                 class="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded border border-white/20 bg-charcoal-900/80 hover:bg-charcoal-850 hover:border-warm-50/40 text-warm-50 font-display font-medium text-sm tracking-wide active:scale-[0.99] transition-all duration-200">
+                 class="btn-magnetic group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded border border-white/20 bg-charcoal-900/80 hover:bg-charcoal-850 hover:border-warm-50/40 text-warm-50 font-display font-medium text-sm tracking-wide active:scale-[0.99] transition-all duration-200">
                 <span>Connect With Me</span>
                 <svg class="w-3.5 h-3.5 text-lime btn-arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
                   <path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -383,7 +386,7 @@
 
             <!-- Right Interactive Product-Interface Preview Column (7 cols) -->
             <div class="lg:col-span-7 clip-reveal reveal-item">
-              <div class="preview-surface rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
+              <div class="preview-surface spotlight-card rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
                 <!-- Browser Window Top Bar -->
                 <div class="px-4 py-3 bg-charcoal-950 border-b border-white/10 flex flex-wrap items-center justify-between gap-2">
                   <div class="flex items-center gap-2">
@@ -570,7 +573,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             <!-- Left Interactive Media-Upload & Analysis Preview (7 cols on desktop for alternating editorial layout) -->
             <div class="lg:col-span-7 order-2 lg:order-1 clip-reveal reveal-item">
-              <div class="preview-surface rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
+              <div class="preview-surface spotlight-card rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
                 <!-- Window Header -->
                 <div class="px-4 py-3 bg-charcoal-950 border-b border-white/10 flex flex-wrap items-center justify-between gap-2">
                   <div class="flex items-center gap-2">
@@ -595,7 +598,15 @@
                 <div class="p-6 sm:p-8 bg-charcoal-900">
                   <!-- Tab 1: Media Upload & Inspection Queue -->
                   <div id="deepfake-view-upload" class="space-y-5">
-                    <div class="border border-dashed border-white/20 rounded-md p-6 bg-charcoal-950/70 text-center space-y-3">
+                    <div class="relative border border-dashed border-white/20 rounded-md p-6 bg-charcoal-950/70 text-center space-y-3 overflow-hidden">
+                      <!-- High-Tech Cinematic Scanning Laser Overlay -->
+                      <div id="deepfake-scan-overlay" class="hidden absolute inset-0 bg-charcoal-950/92 rounded-md flex flex-col items-center justify-center p-6 space-y-3 z-30">
+                        <div class="scanning-laser-line" aria-hidden="true"></div>
+                        <div class="w-10 h-10 rounded-full border-2 border-lime border-t-transparent animate-spin"></div>
+                        <p id="deepfake-scan-status" class="font-mono text-xs text-lime uppercase tracking-wider text-center">Deconstructing facial landmarks...</p>
+                        <p class="font-mono text-[10px] text-warm-400">Inspecting Spatial &amp; Frequency Domain Artifacts</p>
+                      </div>
+
                       <div class="w-11 h-11 rounded-full bg-lime/10 border border-lime/30 mx-auto flex items-center justify-center text-lime">
                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
@@ -839,7 +850,7 @@
 
             <!-- Right Interactive ML Recommendation Explorer Preview (7 cols) -->
             <div class="lg:col-span-7 clip-reveal reveal-item">
-              <div class="preview-surface rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
+              <div class="preview-surface spotlight-card rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
                 <!-- Header -->
                 <div class="px-4 py-3 bg-charcoal-950 border-b border-white/10 flex flex-wrap items-center justify-between gap-2">
                   <div class="flex items-center gap-2">
@@ -964,21 +975,21 @@
 
             <!-- Three Working Principles -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10">
-              <div class="p-4 rounded bg-charcoal-900/80 border border-white/10">
+              <div class="spotlight-card p-4 rounded bg-charcoal-900/80 border border-white/10">
                 <span class="font-mono text-xs text-lime block mb-1.5">01 // EXPERIMENTATION</span>
                 <h3 class="font-display text-sm font-semibold text-warm-50">Learn by Building</h3>
                 <p class="text-xs text-warm-300 mt-1 leading-relaxed">
                   Translating classroom AI/ML theory into working prototypes, datasets, and interactive interfaces.
                 </p>
               </div>
-              <div class="p-4 rounded bg-charcoal-900/80 border border-white/10">
+              <div class="spotlight-card p-4 rounded bg-charcoal-900/80 border border-white/10">
                 <span class="font-mono text-xs text-lime block mb-1.5">02 // CLARITY</span>
                 <h3 class="font-display text-sm font-semibold text-warm-50">Thoughtful Interfaces</h3>
                 <p class="text-xs text-warm-300 mt-1 leading-relaxed">
                   Designing clean, readable user experiences so technical systems feel intuitive and purposeful.
                 </p>
               </div>
-              <div class="p-4 rounded bg-charcoal-900/80 border border-white/10">
+              <div class="spotlight-card p-4 rounded bg-charcoal-900/80 border border-white/10">
                 <span class="font-mono text-xs text-lime block mb-1.5">03 // INTEGRITY</span>
                 <h3 class="font-display text-sm font-semibold text-warm-50">Honest Engineering</h3>
                 <p class="text-xs text-warm-300 mt-1 leading-relaxed">
@@ -1580,6 +1591,21 @@
       </div>
     </div>
   </div>
+
+  <!-- ==========================================
+       FLOATING QUICK ACTION & BACK-TO-TOP BAR
+       ========================================== -->
+  <aside id="floating-quick-bar" class="flex items-center gap-2 p-1.5 rounded-full bg-charcoal-900/90 backdrop-blur-md border border-white/15 shadow-2xl" aria-label="Quick Actions">
+    <a href="#home" class="px-3.5 py-1.5 rounded-full bg-lime text-charcoal-950 font-mono text-xs font-semibold hover:bg-lime-dim transition-colors" aria-label="Back to top">
+      &uarr; Top
+    </a>
+    <a href="https://github.com/Anilyalamati" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-full text-warm-300 hover:text-warm-50 font-mono text-xs transition-colors" aria-label="GitHub Profile">
+      GitHub ↗
+    </a>
+    <a href="https://linkedin.com/in/anilyalamati/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-full text-warm-300 hover:text-lime font-mono text-xs transition-colors" aria-label="LinkedIn Profile">
+      LinkedIn ↗
+    </a>
+  </aside>
 
   <!-- ==========================================
        EXTERNAL MODULAR JAVASCRIPT FILES

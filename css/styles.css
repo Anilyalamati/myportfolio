@@ -171,6 +171,119 @@
       animation: scrollLine 2.4s var(--ease-out-expo) infinite;
     }
 
+    /* Top Reading Progress Bar */
+    #scroll-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(212, 255, 51, 0.4), #D4FF33, #B8E619);
+      z-index: 100;
+      pointer-events: none;
+      transition: width 0.08s linear;
+      box-shadow: 0 0 10px rgba(212, 255, 51, 0.5);
+    }
+
+    /* Card Interactive Spotlight Border & Glow */
+    .spotlight-card {
+      position: relative;
+      transition: border-color 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+    }
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(550px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(212, 255, 51, 0.07), transparent 45%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s var(--ease-out-expo);
+      z-index: 1;
+    }
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Deepfake High-Tech Scan Laser */
+    @keyframes scanLaser {
+      0% { top: 2%; opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { top: 96%; opacity: 0.7; }
+    }
+    .scanning-laser-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #D4FF33, #F4F3EF, #D4FF33, transparent);
+      box-shadow: 0 0 14px #D4FF33, 0 0 4px #F4F3EF;
+      animation: scanLaser 1.5s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    /* Tab Transition & Cross-Fade */
+    .tab-view-transition {
+      animation: tabFadeIn 0.35s var(--ease-out-expo) forwards;
+    }
+    @keyframes tabFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Floating Quick Action / Back-to-Top Bar */
+    #floating-quick-bar {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 40;
+      opacity: 0;
+      transform: translateY(16px);
+      pointer-events: none;
+      transition: opacity 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
+    }
+    #floating-quick-bar.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Subtle Hero Headline Shimmer */
+    .shimmer-text {
+      background: linear-gradient(110deg, #F4F3EF 0%, #D4FF33 45%, #F4F3EF 65%, #E6E4DD 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmerFlow 9s linear infinite;
+    }
+    @keyframes shimmerFlow {
+      to { background-position: 200% center; }
+    }
+
+    /* Live Status Badge Pulse Ring */
+    .pulse-ring {
+      position: relative;
+    }
+    .pulse-ring::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 9999px;
+      border: 1.5px solid #D4FF33;
+      opacity: 0.8;
+      animation: pulseExpand 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+    @keyframes pulseExpand {
+      0% { transform: scale(0.9); opacity: 0.9; }
+      100% { transform: scale(1.7); opacity: 0; }
+    }
+
     /* Reduced Motion Support */
     @media (prefers-reduced-motion: reduce) {
       html {
@@ -189,7 +302,17 @@
       .clip-reveal {
         clip-path: none !important;
       }
-      #cursor-follower {
+      #cursor-follower,
+      #scroll-progress-bar,
+      .scanning-laser-line,
+      .pulse-ring::before {
+        display: none !important;
+      }
+      .shimmer-text {
+        background: none !important;
+        -webkit-text-fill-color: var(--text-primary) !important;
+      }
+      .spotlight-card::before {
         display: none !important;
       }
     }
@@ -208,6 +331,16 @@
     body.reduced-motion-forced .clip-reveal {
       clip-path: none !important;
     }
-    body.reduced-motion-forced #cursor-follower {
+    body.reduced-motion-forced #cursor-follower,
+    body.reduced-motion-forced #scroll-progress-bar,
+    body.reduced-motion-forced .scanning-laser-line,
+    body.reduced-motion-forced .pulse-ring::before {
+      display: none !important;
+    }
+    body.reduced-motion-forced .shimmer-text {
+      background: none !important;
+      -webkit-text-fill-color: var(--text-primary) !important;
+    }
+    body.reduced-motion-forced .spotlight-card::before {
       display: none !important;
     }

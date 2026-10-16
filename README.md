@@ -19,6 +19,17 @@ anil-yalamati-portfolio/
 └── README.md                         # Project documentation & customization guide
 ```
 
+## Interactive Features & Cinematic Animations
+
+- **Dynamic Topological Lattice Canvas:** Real-time 2D canvas with organic pointer inertia (lerp), interactive shockwave ripples on click/touch, neural signal pulses traveling across mesh edges, and drifting ambient bokeh particles.
+- **Top Reading Progress Bar:** Slender electric-lime progress indicator tracking vertical reading depth across the page.
+- **Interactive Spotlight Borders & Glow:** Radial mouse-tracking spotlight highlights on project surfaces and principle cards.
+- **Deepfake Scanning Laser Simulation:** High-tech keyframe ROI inspection sequence with live status readout before revealing structural analysis diagnostics.
+- **Fluid Tab Transitions:** Animated cross-fade and slide transitions across EasyTrip, Deepfake, and ML Recommender interactive tabs.
+- **Magnetic Button Feedback:** Subtle cursor pull and tactile spring physics on primary calls to action on desktop devices.
+- **Floating Quick-Action Bar:** Minimalist persistent quick-navigation pill with instant back-to-top and verified external profile shortcuts.
+- **Comprehensive Reduced-Motion Support:** Full compliance with `prefers-reduced-motion` and a manual toggle in the footer to disable intensive motion instantly.
+
 ## Verified Links Included
 
 - **LinkedIn:** [https://linkedin.com/in/anilyalamati/](https://linkedin.com/in/anilyalamati/)

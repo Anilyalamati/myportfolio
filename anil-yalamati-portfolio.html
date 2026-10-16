@@ -17,6 +17,7 @@
   <meta name="twitter:title" content="Anil Yalamati | AI/ML Developer Portfolio" />
   <meta name="twitter:description" content="B.Tech AI/ML student and developer building practical intelligent systems and digital product experiences." />
 
+  <!-- Monogram Favicon (AY) -->
   <!-- Inline SVG Monogram Favicon (AY) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230A0B0D'/%3E%3Crect x='2' y='2' width='60' height='60' rx='8' fill='none' stroke='%23D4FF33' stroke-width='2' stroke-opacity='0.45'/%3E%3Cpath d='M14 46L24.5 18H29.5L40 46H34.8L32.4 39.2H21.6L19.2 46H14ZM23.1 34.8H30.9L27 23.6L23.1 34.8Z' fill='%23F4F3EF'/%3E%3Cpath d='M38.5 18H44L49 29.2L54 18H59.5L51.5 34.5V46H46.5V34.5L38.5 18Z' fill='%23D4FF33'/%3E%3C/svg%3E" />
 
@@ -25,10 +26,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS & Custom Theme Config -->
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script>
-    tailwind.config = {
+/**
+ * Tailwind CSS Theme Configuration
+ * Palette: Near-black charcoal, warm white, neutral grey, electric lime
+ */
+tailwind.config = {
       theme: {
         extend: {
           colors: {
@@ -59,10 +64,12 @@
         }
       }
     };
+
   </script>
 
+  <!-- Custom Editorial Stylesheet -->
   <style>
-    :root {
+:root {
       --bg-primary: #0A0B0D;
       --bg-elevated: #101216;
       --bg-surface: #15181E;
@@ -235,6 +242,119 @@
       animation: scrollLine 2.4s var(--ease-out-expo) infinite;
     }
 
+    /* Top Reading Progress Bar */
+    #scroll-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(212, 255, 51, 0.4), #D4FF33, #B8E619);
+      z-index: 100;
+      pointer-events: none;
+      transition: width 0.08s linear;
+      box-shadow: 0 0 10px rgba(212, 255, 51, 0.5);
+    }
+
+    /* Card Interactive Spotlight Border & Glow */
+    .spotlight-card {
+      position: relative;
+      transition: border-color 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+    }
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(550px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(212, 255, 51, 0.07), transparent 45%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s var(--ease-out-expo);
+      z-index: 1;
+    }
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Deepfake High-Tech Scan Laser */
+    @keyframes scanLaser {
+      0% { top: 2%; opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { top: 96%; opacity: 0.7; }
+    }
+    .scanning-laser-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #D4FF33, #F4F3EF, #D4FF33, transparent);
+      box-shadow: 0 0 14px #D4FF33, 0 0 4px #F4F3EF;
+      animation: scanLaser 1.5s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    /* Tab Transition & Cross-Fade */
+    .tab-view-transition {
+      animation: tabFadeIn 0.35s var(--ease-out-expo) forwards;
+    }
+    @keyframes tabFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Floating Quick Action / Back-to-Top Bar */
+    #floating-quick-bar {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 40;
+      opacity: 0;
+      transform: translateY(16px);
+      pointer-events: none;
+      transition: opacity 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
+    }
+    #floating-quick-bar.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Subtle Hero Headline Shimmer */
+    .shimmer-text {
+      background: linear-gradient(110deg, #F4F3EF 0%, #D4FF33 45%, #F4F3EF 65%, #E6E4DD 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmerFlow 9s linear infinite;
+    }
+    @keyframes shimmerFlow {
+      to { background-position: 200% center; }
+    }
+
+    /* Live Status Badge Pulse Ring */
+    .pulse-ring {
+      position: relative;
+    }
+    .pulse-ring::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 9999px;
+      border: 1.5px solid #D4FF33;
+      opacity: 0.8;
+      animation: pulseExpand 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+    @keyframes pulseExpand {
+      0% { transform: scale(0.9); opacity: 0.9; }
+      100% { transform: scale(1.7); opacity: 0; }
+    }
+
     /* Reduced Motion Support */
     @media (prefers-reduced-motion: reduce) {
       html {
@@ -253,7 +373,17 @@
       .clip-reveal {
         clip-path: none !important;
       }
-      #cursor-follower {
+      #cursor-follower,
+      #scroll-progress-bar,
+      .scanning-laser-line,
+      .pulse-ring::before {
+        display: none !important;
+      }
+      .shimmer-text {
+        background: none !important;
+        -webkit-text-fill-color: var(--text-primary) !important;
+      }
+      .spotlight-card::before {
         display: none !important;
       }
     }
@@ -272,12 +402,26 @@
     body.reduced-motion-forced .clip-reveal {
       clip-path: none !important;
     }
-    body.reduced-motion-forced #cursor-follower {
+    body.reduced-motion-forced #cursor-follower,
+    body.reduced-motion-forced #scroll-progress-bar,
+    body.reduced-motion-forced .scanning-laser-line,
+    body.reduced-motion-forced .pulse-ring::before {
       display: none !important;
     }
+    body.reduced-motion-forced .shimmer-text {
+      background: none !important;
+      -webkit-text-fill-color: var(--text-primary) !important;
+    }
+    body.reduced-motion-forced .spotlight-card::before {
+      display: none !important;
+    }
+
   </style>
 </head>
 <body class="bg-charcoal-950 text-warm-50 selection:bg-lime selection:text-charcoal-950">
+
+  <!-- Top Reading Progress Bar -->
+  <div id="scroll-progress-bar" style="width: 0%;" aria-hidden="true"></div>
 
   <!-- Skip to Content for Keyboard Accessibility -->
   <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-lime focus:text-charcoal-950 focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:font-semibold focus:rounded">
@@ -404,7 +548,7 @@
       <div class="relative z-10 max-w-7xl w-full mx-auto px-5 sm:px-8 lg:px-12">
         <div class="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-white/10">
           <div class="inline-flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-lime animate-pulse" aria-hidden="true"></span>
+            <span class="pulse-ring w-2 h-2 rounded-full bg-lime inline-block" aria-hidden="true"></span>
             <p class="font-mono text-xs sm:text-sm tracking-[0.2em] uppercase text-lime font-medium">
               AI / MACHINE LEARNING / DEVELOPMENT
             </p>
@@ -422,7 +566,7 @@
           <div class="lg:col-span-8">
             <h1 class="hero-headline text-warm-50 tracking-tight">
               <span class="block reveal-item" style="transition-delay: 60ms;">Building</span>
-              <span class="block reveal-item text-warm-50" style="transition-delay: 140ms;">
+              <span class="block reveal-item text-warm-50 shimmer-text" style="transition-delay: 140ms;">
                 intelligent <span class="text-lime font-normal italic">experiences</span>
               </span>
               <span class="block reveal-item" style="transition-delay: 220ms;">with purpose.</span>
@@ -438,7 +582,7 @@
             <!-- Primary & Secondary CTAs -->
             <div class="reveal-item flex flex-col sm:flex-row lg:flex-col xl:flex-row items-stretch sm:items-center gap-3.5" style="transition-delay: 380ms;">
               <a href="#work"
-                 class="group inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded bg-lime text-charcoal-950 font-display font-semibold text-sm tracking-wide hover:bg-lime-dim active:scale-[0.99] transition-all duration-200">
+                 class="btn-magnetic group inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded bg-lime text-charcoal-950 font-display font-semibold text-sm tracking-wide hover:bg-lime-dim active:scale-[0.99] transition-all duration-200">
                 <span>Explore My Work</span>
                 <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path d="M8 3v10M8 13l-4-4M8 13l4-4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -446,7 +590,7 @@
               </a>
 
               <a href="https://linkedin.com/in/anilyalamati/" target="_blank" rel="noopener noreferrer"
-                 class="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded border border-white/20 bg-charcoal-900/80 hover:bg-charcoal-850 hover:border-warm-50/40 text-warm-50 font-display font-medium text-sm tracking-wide active:scale-[0.99] transition-all duration-200">
+                 class="btn-magnetic group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded border border-white/20 bg-charcoal-900/80 hover:bg-charcoal-850 hover:border-warm-50/40 text-warm-50 font-display font-medium text-sm tracking-wide active:scale-[0.99] transition-all duration-200">
                 <span>Connect With Me</span>
                 <svg class="w-3.5 h-3.5 text-lime btn-arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
                   <path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -628,7 +772,7 @@
 
             <!-- Right Interactive Product-Interface Preview Column (7 cols) -->
             <div class="lg:col-span-7 clip-reveal reveal-item">
-              <div class="preview-surface rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
+              <div class="preview-surface spotlight-card rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
                 <!-- Browser Window Top Bar -->
                 <div class="px-4 py-3 bg-charcoal-950 border-b border-white/10 flex flex-wrap items-center justify-between gap-2">
                   <div class="flex items-center gap-2">
@@ -815,7 +959,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             <!-- Left Interactive Media-Upload & Analysis Preview (7 cols on desktop for alternating editorial layout) -->
             <div class="lg:col-span-7 order-2 lg:order-1 clip-reveal reveal-item">
-              <div class="preview-surface rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
+              <div class="preview-surface spotlight-card rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
                 <!-- Window Header -->
                 <div class="px-4 py-3 bg-charcoal-950 border-b border-white/10 flex flex-wrap items-center justify-between gap-2">
                   <div class="flex items-center gap-2">
@@ -840,7 +984,15 @@
                 <div class="p-6 sm:p-8 bg-charcoal-900">
                   <!-- Tab 1: Media Upload & Inspection Queue -->
                   <div id="deepfake-view-upload" class="space-y-5">
-                    <div class="border border-dashed border-white/20 rounded-md p-6 bg-charcoal-950/70 text-center space-y-3">
+                    <div class="relative border border-dashed border-white/20 rounded-md p-6 bg-charcoal-950/70 text-center space-y-3 overflow-hidden">
+                      <!-- High-Tech Cinematic Scanning Laser Overlay -->
+                      <div id="deepfake-scan-overlay" class="hidden absolute inset-0 bg-charcoal-950/92 rounded-md flex flex-col items-center justify-center p-6 space-y-3 z-30">
+                        <div class="scanning-laser-line" aria-hidden="true"></div>
+                        <div class="w-10 h-10 rounded-full border-2 border-lime border-t-transparent animate-spin"></div>
+                        <p id="deepfake-scan-status" class="font-mono text-xs text-lime uppercase tracking-wider text-center">Deconstructing facial landmarks...</p>
+                        <p class="font-mono text-[10px] text-warm-400">Inspecting Spatial &amp; Frequency Domain Artifacts</p>
+                      </div>
+
                       <div class="w-11 h-11 rounded-full bg-lime/10 border border-lime/30 mx-auto flex items-center justify-center text-lime">
                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
@@ -1084,7 +1236,7 @@
 
             <!-- Right Interactive ML Recommendation Explorer Preview (7 cols) -->
             <div class="lg:col-span-7 clip-reveal reveal-item">
-              <div class="preview-surface rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
+              <div class="preview-surface spotlight-card rounded-md border border-white/15 bg-charcoal-900 overflow-hidden shadow-2xl">
                 <!-- Header -->
                 <div class="px-4 py-3 bg-charcoal-950 border-b border-white/10 flex flex-wrap items-center justify-between gap-2">
                   <div class="flex items-center gap-2">
@@ -1209,21 +1361,21 @@
 
             <!-- Three Working Principles -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10">
-              <div class="p-4 rounded bg-charcoal-900/80 border border-white/10">
+              <div class="spotlight-card p-4 rounded bg-charcoal-900/80 border border-white/10">
                 <span class="font-mono text-xs text-lime block mb-1.5">01 // EXPERIMENTATION</span>
                 <h3 class="font-display text-sm font-semibold text-warm-50">Learn by Building</h3>
                 <p class="text-xs text-warm-300 mt-1 leading-relaxed">
                   Translating classroom AI/ML theory into working prototypes, datasets, and interactive interfaces.
                 </p>
               </div>
-              <div class="p-4 rounded bg-charcoal-900/80 border border-white/10">
+              <div class="spotlight-card p-4 rounded bg-charcoal-900/80 border border-white/10">
                 <span class="font-mono text-xs text-lime block mb-1.5">02 // CLARITY</span>
                 <h3 class="font-display text-sm font-semibold text-warm-50">Thoughtful Interfaces</h3>
                 <p class="text-xs text-warm-300 mt-1 leading-relaxed">
                   Designing clean, readable user experiences so technical systems feel intuitive and purposeful.
                 </p>
               </div>
-              <div class="p-4 rounded bg-charcoal-900/80 border border-white/10">
+              <div class="spotlight-card p-4 rounded bg-charcoal-900/80 border border-white/10">
                 <span class="font-mono text-xs text-lime block mb-1.5">03 // INTEGRITY</span>
                 <h3 class="font-display text-sm font-semibold text-warm-50">Honest Engineering</h3>
                 <p class="text-xs text-warm-300 mt-1 leading-relaxed">
@@ -1827,10 +1979,25 @@
   </div>
 
   <!-- ==========================================
+       FLOATING QUICK ACTION & BACK-TO-TOP BAR
+       ========================================== -->
+  <aside id="floating-quick-bar" class="flex items-center gap-2 p-1.5 rounded-full bg-charcoal-900/90 backdrop-blur-md border border-white/15 shadow-2xl" aria-label="Quick Actions">
+    <a href="#home" class="px-3.5 py-1.5 rounded-full bg-lime text-charcoal-950 font-mono text-xs font-semibold hover:bg-lime-dim transition-colors" aria-label="Back to top">
+      &uarr; Top
+    </a>
+    <a href="https://github.com/Anilyalamati" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-full text-warm-300 hover:text-warm-50 font-mono text-xs transition-colors" aria-label="GitHub Profile">
+      GitHub ↗
+    </a>
+    <a href="https://linkedin.com/in/anilyalamati/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-full text-warm-300 hover:text-lime font-mono text-xs transition-colors" aria-label="LinkedIn Profile">
+      LinkedIn ↗
+    </a>
+  </aside>
+
+  <!-- ==========================================
        INTERACTIVE PORTFOLIO LOGIC & CONFIGURATION
        ========================================== -->
   <script>
-    /**
+/**
      * REPLACEABLE PORTFOLIO INTEGRATION CONFIGURATION
      * -----------------------------------------------
      * Easy-to-update configuration block for optional assets & direct repository URLs.
@@ -1852,7 +2019,92 @@
       }
     };
 
-    // 1. Render Optional Verified Assets if Configured
+// Recommendation System Preview Seed Profiles
+const REC_SEED_DATA = {
+      'ai-systems': [
+        { rank: '01', title: 'Content-Based Vector Similarity Engine', tags: 'Cosine Distance • TF-IDF / Embeddings', align: 'High Feature Overlap' },
+        { rank: '02', title: 'Vision Frame Artifact Inspection Pipeline', tags: 'Spatial Filtering • Keyframe ROI', align: 'Shared ML Pipeline Pattern' },
+        { rank: '03', title: 'Preference-Guided Itinerary Structuring', tags: 'Constraint Scoring • User Inputs', align: 'Personalization Domain Match' }
+      ],
+      'data-eng': [
+        { rank: '01', title: 'Sparse Matrix Feature Normalization', tags: 'Pandas • NumPy • Missing-Value Handling', align: 'Core Preprocessing Match' },
+        { rank: '02', title: 'Metadata Tokenization & Attribute Weighting', tags: 'Scikit-Learn • Vector Space', align: 'Pipeline Stage Dependency' },
+        { rank: '03', title: 'Exploratory Distribution & Cold-Start Analysis', tags: 'EDA • Qualitative Ranking Check', align: 'Evaluation Workflow Match' }
+      ],
+      'web-ux': [
+        { rank: '01', title: 'EasyTrip Interactive Travel Companion UI', tags: 'Responsive Web • Vercel Deployment', align: 'Frontend Product Architecture' },
+        { rank: '02', title: 'Diagnostic Media Upload & Result Console', tags: 'Interactive State • Visual Feedback', align: 'Human-Centered AI Interface' },
+        { rank: '03', title: 'Real-Time Top-N Recommendation Explorer', tags: 'DOM State • Interactive Filtering', align: 'Interactive Data Presentation' }
+      ]
+    };
+
+// Technical Architecture Modal Content
+const MODAL_CONTENT = {
+      deepfake: {
+        eyebrow: 'PROJECT 02 // TECHNICAL WORKFLOW OVERVIEW',
+        title: 'Deepfake Detection Web Application',
+        repoUrl: PORTFOLIO_CONFIG.repositories.deepfake || PORTFOLIO_CONFIG.githubProfile,
+        body: `
+          <p>
+            This project explores the end-to-end workflow required to inspect digital images and short video clips for potential synthetic manipulation through an approachable web interface.
+          </p>
+          <div class="p-4 rounded bg-charcoal-950 border border-white/10 space-y-2">
+            <h4 class="font-mono text-xs text-lime uppercase">1. Media Ingestion &amp; Preprocessing</h4>
+            <p class="text-xs text-warm-300">
+              Handles static image uploads and video streams by sampling keyframes, isolating facial bounding regions, and normalizing resolution and color channels prior to analysis.
+            </p>
+          </div>
+          <div class="p-4 rounded bg-charcoal-950 border border-white/10 space-y-2">
+            <h4 class="font-mono text-xs text-lime uppercase">2. Spatial &amp; Temporal Feature Inspection</h4>
+            <p class="text-xs text-warm-300">
+              Explores convolutional feature extraction and visual boundary inspection around high-artifact zones (periocular region, jawline blending edges, and inconsistent lighting reflections).
+            </p>
+          </div>
+          <div class="p-4 rounded bg-charcoal-950 border border-white/10 space-y-2">
+            <h4 class="font-mono text-xs text-lime uppercase">3. Practical Engineering Challenges</h4>
+            <p class="text-xs text-warm-300">
+              Addresses real-world challenges such as heavy compression artifacts on re-shared videos, varying illumination, and presenting clear diagnostic steps without overclaiming model certainty.
+            </p>
+          </div>
+        `
+      },
+      recommender: {
+        eyebrow: 'PROJECT 03 // MACHINE LEARNING WORKFLOW OVERVIEW',
+        title: 'Machine-Learning Recommendation System',
+        repoUrl: PORTFOLIO_CONFIG.repositories.recommender || PORTFOLIO_CONFIG.githubProfile,
+        body: `
+          <p>
+            A practical machine-learning implementation focused on turning structured item metadata and feature vectors into relevant Top-N recommendations.
+          </p>
+          <div class="p-4 rounded bg-charcoal-950 border border-white/10 space-y-2">
+            <h4 class="font-mono text-xs text-lime uppercase">1. Dataset Preparation &amp; Feature Engineering</h4>
+            <p class="text-xs text-warm-300">
+              Cleans raw tabular datasets using Pandas and NumPy, resolves missing attributes, and constructs consolidated feature representations across item categories and descriptors.
+            </p>
+          </div>
+          <div class="p-4 rounded bg-charcoal-950 border border-white/10 space-y-2">
+            <h4 class="font-mono text-xs text-lime uppercase">2. Vector Space &amp; Cosine Similarity</h4>
+            <p class="text-xs text-warm-300">
+              Transforms textual and categorical attributes into numerical vectors and computes pairwise cosine similarity matrices in Scikit-Learn to retrieve closest neighbor candidates.
+            </p>
+          </div>
+          <div class="p-4 rounded bg-charcoal-950 border border-white/10 space-y-2">
+            <h4 class="font-mono text-xs text-lime uppercase">3. Qualitative Evaluation</h4>
+            <p class="text-xs text-warm-300">
+              Inspects Top-N ranking coherence across varied seed inputs and examines how feature weighting affects recommendation diversity.
+            </p>
+          </div>
+        `
+      }
+    };
+
+
+/**
+ * Main Interactive Logic & Motion System
+ * Anil Yalamati — AI/ML Developer Portfolio
+ */
+
+// 1. Render Optional Verified Assets if Configured
     (function initOptionalAssets() {
       const navResumeSlot = document.getElementById('nav-resume-slot');
       if (PORTFOLIO_CONFIG.resumeUrl && navResumeSlot) {
@@ -1883,18 +2135,35 @@
       }
     })();
 
-    // 2. Sticky Header & Active Section Scroll-Spy
+    // 2. Sticky Header, Scroll-Spy, Reading Progress & Quick Bar
     const siteHeader = document.getElementById('site-header');
+    const scrollProgressBar = document.getElementById('scroll-progress-bar');
+    const floatingQuickBar = document.getElementById('floating-quick-bar');
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('main section[id]');
 
     function updateHeaderOnScroll() {
-      if (window.scrollY > 24) {
+      const scrollY = window.scrollY;
+      if (scrollY > 24) {
         siteHeader.classList.add('bg-charcoal-950/90', 'backdrop-blur-md', 'border-white/10');
         siteHeader.classList.remove('border-transparent');
       } else {
         siteHeader.classList.remove('bg-charcoal-950/90', 'backdrop-blur-md', 'border-white/10');
         siteHeader.classList.add('border-transparent');
+      }
+
+      if (scrollProgressBar) {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = totalHeight > 0 ? (scrollY / totalHeight) * 100 : 0;
+        scrollProgressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+      }
+
+      if (floatingQuickBar) {
+        if (scrollY > 480) {
+          floatingQuickBar.classList.add('is-visible');
+        } else {
+          floatingQuickBar.classList.remove('is-visible');
+        }
       }
     }
     window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
@@ -1974,7 +2243,16 @@
             : 'easytrip-tab-btn px-2.5 py-1 rounded text-[11px] font-mono bg-charcoal-850 text-warm-300 hover:text-warm-50';
         });
         Object.keys(easytripViews).forEach((key) => {
-          easytripViews[key].classList.toggle('hidden', key !== target);
+          const view = easytripViews[key];
+          if (view) {
+            const isTarget = key === target;
+            view.classList.toggle('hidden', !isTarget);
+            if (isTarget) {
+              view.classList.remove('tab-view-transition');
+              void view.offsetWidth;
+              view.classList.add('tab-view-transition');
+            }
+          }
         });
       });
     });
@@ -1994,7 +2272,16 @@
           : 'deepfake-tab-btn px-2.5 py-1 rounded text-[11px] font-mono bg-charcoal-850 text-warm-300 hover:text-warm-50';
       });
       Object.keys(deepfakeViews).forEach((key) => {
-        deepfakeViews[key].classList.toggle('hidden', key !== target);
+        const view = deepfakeViews[key];
+        if (view) {
+          const isTarget = key === target;
+          view.classList.toggle('hidden', !isTarget);
+          if (isTarget) {
+            view.classList.remove('tab-view-transition');
+            void view.offsetWidth;
+            view.classList.add('tab-view-transition');
+          }
+        }
       });
     }
 
@@ -2003,8 +2290,40 @@
     });
 
     const simulateDeepfakeBtn = document.getElementById('simulate-deepfake-scan-btn');
+    const deepfakeScanOverlay = document.getElementById('deepfake-scan-overlay');
+    const deepfakeScanStatus = document.getElementById('deepfake-scan-status');
+
     if (simulateDeepfakeBtn) {
-      simulateDeepfakeBtn.addEventListener('click', () => switchDeepfakeTab('analysis'));
+      simulateDeepfakeBtn.addEventListener('click', () => {
+        if (motionReduced || !deepfakeScanOverlay) {
+          switchDeepfakeTab('analysis');
+          return;
+        }
+
+        deepfakeScanOverlay.classList.remove('hidden');
+        simulateDeepfakeBtn.disabled = true;
+
+        const scanStages = [
+          'Deconstructing facial landmarks...',
+          'Computing FFT frequency spectrum...',
+          'Evaluating GAN boundary residuals...',
+          'Artifact confidence: 94.8% synthetic'
+        ];
+        let step = 0;
+        const interval = setInterval(() => {
+          step++;
+          if (step < scanStages.length && deepfakeScanStatus) {
+            deepfakeScanStatus.textContent = scanStages[step];
+          }
+        }, 260);
+
+        setTimeout(() => {
+          clearInterval(interval);
+          deepfakeScanOverlay.classList.add('hidden');
+          simulateDeepfakeBtn.disabled = false;
+          switchDeepfakeTab('analysis');
+        }, 1150);
+      });
     }
 
     // 7. ML Recommendation System Interactive Preview
@@ -2024,28 +2343,21 @@
             : 'rec-mode-btn px-2.5 py-1 rounded text-[11px] font-mono bg-charcoal-850 text-warm-300 hover:text-warm-50';
         });
         Object.keys(recViews).forEach((k) => {
-          recViews[k].classList.toggle('hidden', k !== mode);
+          const view = recViews[k];
+          if (view) {
+            const isTarget = k === mode;
+            view.classList.toggle('hidden', !isTarget);
+            if (isTarget) {
+              view.classList.remove('tab-view-transition');
+              void view.offsetWidth;
+              view.classList.add('tab-view-transition');
+            }
+          }
         });
       });
     });
 
-    const REC_SEED_DATA = {
-      'ai-systems': [
-        { rank: '01', title: 'Content-Based Vector Similarity Engine', tags: 'Cosine Distance • TF-IDF / Embeddings', align: 'High Feature Overlap' },
-        { rank: '02', title: 'Vision Frame Artifact Inspection Pipeline', tags: 'Spatial Filtering • Keyframe ROI', align: 'Shared ML Pipeline Pattern' },
-        { rank: '03', title: 'Preference-Guided Itinerary Structuring', tags: 'Constraint Scoring • User Inputs', align: 'Personalization Domain Match' }
-      ],
-      'data-eng': [
-        { rank: '01', title: 'Sparse Matrix Feature Normalization', tags: 'Pandas • NumPy • Missing-Value Handling', align: 'Core Preprocessing Match' },
-        { rank: '02', title: 'Metadata Tokenization & Attribute Weighting', tags: 'Scikit-Learn • Vector Space', align: 'Pipeline Stage Dependency' },
-        { rank: '03', title: 'Exploratory Distribution & Cold-Start Analysis', tags: 'EDA • Qualitative Ranking Check', align: 'Evaluation Workflow Match' }
-      ],
-      'web-ux': [
-        { rank: '01', title: 'EasyTrip Interactive Travel Companion UI', tags: 'Responsive Web • Vercel Deployment', align: 'Frontend Product Architecture' },
-        { rank: '02', title: 'Diagnostic Media Upload & Result Console', tags: 'Interactive State • Visual Feedback', align: 'Human-Centered AI Interface' },
-        { rank: '03', title: 'Real-Time Top-N Recommendation Explorer', tags: 'DOM State • Interactive Filtering', align: 'Interactive Data Presentation' }
-      ]
-    };
+    // REC_SEED_DATA loaded from js/config.js
 
     const recSeedSelect = document.getElementById('rec-seed-select');
     const recOutputList = document.getElementById('rec-output-list');
@@ -2112,64 +2424,7 @@
     });
 
     // 10. Project Technical Modal (For Deepfake Detection & ML Recommendation System)
-    const MODAL_CONTENT = {
-      deepfake: {
-        eyebrow: 'PROJECT 02 // TECHNICAL WORKFLOW OVERVIEW',
-        title: 'Deepfake Detection Web Application',
-        repoUrl: PORTFOLIO_CONFIG.repositories.deepfake || PORTFOLIO_CONFIG.githubProfile,
-        body: `
-          <p>
-            This project explores the end-to-end workflow required to inspect digital images and short video clips for potential synthetic manipulation through an approachable web interface.
-          </p>
-          <div class="p-4 rounded bg-charcoal-950 border border-white/10 space-y-2">
-            <h4 class="font-mono text-xs text-lime uppercase">1. Media Ingestion &amp; Preprocessing</h4>
-            <p class="text-xs text-warm-300">
-              Handles static image uploads and video streams by sampling keyframes, isolating facial bounding regions, and normalizing resolution and color channels prior to analysis.
-            </p>
-          </div>
-          <div class="p-4 rounded bg-charcoal-950 border border-white/10 space-y-2">
-            <h4 class="font-mono text-xs text-lime uppercase">2. Spatial &amp; Temporal Feature Inspection</h4>
-            <p class="text-xs text-warm-300">
-              Explores convolutional feature extraction and visual boundary inspection around high-artifact zones (periocular region, jawline blending edges, and inconsistent lighting reflections).
-            </p>
-          </div>
-          <div class="p-4 rounded bg-charcoal-950 border border-white/10 space-y-2">
-            <h4 class="font-mono text-xs text-lime uppercase">3. Practical Engineering Challenges</h4>
-            <p class="text-xs text-warm-300">
-              Addresses real-world challenges such as heavy compression artifacts on re-shared videos, varying illumination, and presenting clear diagnostic steps without overclaiming model certainty.
-            </p>
-          </div>
-        `
-      },
-      recommender: {
-        eyebrow: 'PROJECT 03 // MACHINE LEARNING WORKFLOW OVERVIEW',
-        title: 'Machine-Learning Recommendation System',
-        repoUrl: PORTFOLIO_CONFIG.repositories.recommender || PORTFOLIO_CONFIG.githubProfile,
-        body: `
-          <p>
-            A practical machine-learning implementation focused on turning structured item metadata and feature vectors into relevant Top-N recommendations.
-          </p>
-          <div class="p-4 rounded bg-charcoal-950 border border-white/10 space-y-2">
-            <h4 class="font-mono text-xs text-lime uppercase">1. Dataset Preparation &amp; Feature Engineering</h4>
-            <p class="text-xs text-warm-300">
-              Cleans raw tabular datasets using Pandas and NumPy, resolves missing attributes, and constructs consolidated feature representations across item categories and descriptors.
-            </p>
-          </div>
-          <div class="p-4 rounded bg-charcoal-950 border border-white/10 space-y-2">
-            <h4 class="font-mono text-xs text-lime uppercase">2. Vector Space &amp; Cosine Similarity</h4>
-            <p class="text-xs text-warm-300">
-              Transforms textual and categorical attributes into numerical vectors and computes pairwise cosine similarity matrices in Scikit-Learn to retrieve closest neighbor candidates.
-            </p>
-          </div>
-          <div class="p-4 rounded bg-charcoal-950 border border-white/10 space-y-2">
-            <h4 class="font-mono text-xs text-lime uppercase">3. Qualitative Evaluation</h4>
-            <p class="text-xs text-warm-300">
-              Inspects Top-N ranking coherence across varied seed inputs and examines how feature weighting affects recommendation diversity.
-            </p>
-          </div>
-        `
-      }
-    };
+    // MODAL_CONTENT loaded from js/config.js
 
     const projectModal = document.getElementById('project-modal');
     const modalEyebrow = document.getElementById('modal-eyebrow');
@@ -2233,13 +2488,49 @@
         cursorFollower.style.transform = `translate3d(${e.clientX - 14}px, ${e.clientY - 14}px, 0)`;
       }, { passive: true });
 
-      document.querySelectorAll('a, button, select').forEach((el) => {
+      document.querySelectorAll('a, button, select, [role="button"]').forEach((el) => {
         el.addEventListener('mouseenter', () => cursorFollower.classList.add('cursor-Expanded'));
         el.addEventListener('mouseleave', () => cursorFollower.classList.remove('cursor-Expanded'));
       });
     }
 
-    // 12. Lightweight Hero Topological Vector Lattice Canvas
+    // 12. Interactive Card Spotlight Effect
+    (function initCardSpotlight() {
+      if (motionReduced || !window.matchMedia('(pointer: fine)').matches) return;
+      const cards = document.querySelectorAll('.spotlight-card, .project-card-frame');
+      cards.forEach((card) => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        }, { passive: true });
+      });
+    })();
+
+    // 13. Magnetic Button Hover Interaction
+    (function initMagneticButtons() {
+      if (motionReduced || !window.matchMedia('(pointer: fine)').matches) return;
+      const magneticBtns = document.querySelectorAll('.btn-magnetic');
+      magneticBtns.forEach((btn) => {
+        btn.addEventListener('mousemove', (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          btn.style.transform = `translate3d(${x * 0.16}px, ${y * 0.16}px, 0)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+          btn.style.transform = 'translate3d(0, 0, 0)';
+          btn.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+        });
+        btn.addEventListener('mouseenter', () => {
+          btn.style.transition = 'none';
+        });
+      });
+    })();
+
+    // 14. High-Performance Hero Topological Lattice Canvas with Synaptic Pulses & Ripple Dynamics
     (function initHeroCanvas() {
       const canvas = document.getElementById('hero-lattice-canvas');
       if (!canvas) return;
@@ -2247,15 +2538,22 @@
       let width = 0;
       let height = 0;
       let animId = null;
-      let pointer = { x: 0.65, y: 0.45 };
       let tick = 0;
 
+      const pointer = {
+        current: { x: 0.65, y: 0.45 },
+        target: { x: 0.65, y: 0.45 }
+      };
+
       const nodes = [];
-      const COLS = 11;
-      const ROWS = 6;
+      const COLS = 12;
+      const ROWS = 7;
+      const ripples = [];
+      const pulses = [];
+      const dust = [];
 
       function resizeCanvas() {
-        const rect = canvas.parentElement.getBoundingClientRect();
+        const rect = canvas.parentElement ? canvas.parentElement.getBoundingClientRect() : { width: window.innerWidth, height: window.innerHeight };
         width = rect.width || window.innerWidth;
         height = rect.height || window.innerHeight;
         const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -2263,6 +2561,7 @@
         canvas.height = height * dpr;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         buildNodes();
+        buildDust();
         drawFrame();
       }
 
@@ -2282,24 +2581,119 @@
         }
       }
 
+      function buildDust() {
+        dust.length = 0;
+        const count = Math.min(32, Math.floor(width / 40));
+        for (let i = 0; i < count; i++) {
+          dust.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.25,
+            vy: -0.15 - Math.random() * 0.25,
+            size: 0.6 + Math.random() * 1.4,
+            alpha: 0.12 + Math.random() * 0.28,
+            pulseOffset: Math.random() * Math.PI * 2
+          });
+        }
+      }
+
+      function spawnPulse() {
+        if (nodes.length === 0 || pulses.length >= 6) return;
+        const idx = Math.floor(Math.random() * nodes.length);
+        const from = nodes[idx];
+        const neighbors = [];
+        if (from.c < COLS - 1) neighbors.push(nodes[idx + 1]);
+        if (from.r < ROWS - 1) neighbors.push(nodes[idx + COLS]);
+        if (neighbors.length === 0) return;
+        const to = neighbors[Math.floor(Math.random() * neighbors.length)];
+        pulses.push({
+          from,
+          to,
+          progress: 0,
+          speed: 0.018 + Math.random() * 0.022
+        });
+      }
+
+      function triggerRipple(x, y) {
+        if (motionReduced) return;
+        ripples.push({
+          x,
+          y,
+          radius: 0,
+          maxRadius: Math.min(width, height) * 0.75,
+          speed: 5.5,
+          intensity: 1.0
+        });
+      }
+
       function drawFrame() {
         ctx.clearRect(0, 0, width, height);
-        const px = pointer.x * width;
-        const py = pointer.y * height;
 
+        // Smooth Pointer Easing (Lerp)
+        if (!motionReduced) {
+          pointer.current.x += (pointer.target.x - pointer.current.x) * 0.06;
+          pointer.current.y += (pointer.target.y - pointer.current.y) * 0.06;
+        }
+
+        const px = pointer.current.x * width;
+        const py = pointer.current.y * height;
+
+        // Update Ripples
+        for (let i = ripples.length - 1; i >= 0; i--) {
+          const rip = ripples[i];
+          rip.radius += rip.speed;
+          rip.intensity = Math.max(0, 1 - rip.radius / rip.maxRadius);
+          if (rip.intensity <= 0) {
+            ripples.splice(i, 1);
+          }
+        }
+
+        // Draw Ambient Dust Particles
+        for (let i = 0; i < dust.length; i++) {
+          const p = dust[i];
+          if (!motionReduced) {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.y < 0) p.y = height;
+            if (p.x < 0) p.x = width;
+            if (p.x > width) p.x = 0;
+          }
+          const flicker = Math.sin(tick * 0.03 + p.pulseOffset) * 0.1;
+          const a = Math.max(0.04, Math.min(0.5, p.alpha + flicker));
+          ctx.fillStyle = `rgba(212, 255, 51, ${a})`;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // Calculate Node Positions with Waves, Mouse Pull, and Shockwaves
         for (let i = 0; i < nodes.length; i++) {
           const n = nodes[i];
           const dx = n.baseX - px;
           const dy = n.baseY - py;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          const pull = Math.max(0, 1 - dist / 340);
-          const waveX = motionReduced ? 0 : Math.sin(tick * 0.015 + n.c * 0.5 + n.r * 0.3) * 8;
-          const waveY = motionReduced ? 0 : Math.cos(tick * 0.012 + n.r * 0.6 + n.c * 0.4) * 8;
-          n.x = n.baseX + waveX + (dx / (dist || 1)) * pull * 16;
-          n.y = n.baseY + waveY + (dy / (dist || 1)) * pull * 16;
+          const pull = Math.max(0, 1 - dist / 360);
+          const waveX = motionReduced ? 0 : Math.sin(tick * 0.016 + n.c * 0.45 + n.r * 0.28) * 8;
+          const waveY = motionReduced ? 0 : Math.cos(tick * 0.013 + n.r * 0.5 + n.c * 0.35) * 8;
+
+          let ripOffset = 0;
+          for (let r = 0; r < ripples.length; r++) {
+            const rip = ripples[r];
+            const rdx = n.baseX - rip.x;
+            const rdy = n.baseY - rip.y;
+            const rDist = Math.sqrt(rdx * rdx + rdy * rdy);
+            const delta = Math.abs(rDist - rip.radius);
+            if (delta < 80) {
+              const strength = Math.cos((delta / 80) * (Math.PI / 2)) * rip.intensity * 20;
+              ripOffset += strength;
+            }
+          }
+
+          n.x = n.baseX + waveX + (dx / (dist || 1)) * pull * 18 + (ripOffset ? (dx / (dist || 1)) * ripOffset : 0);
+          n.y = n.baseY + waveY + (dy / (dist || 1)) * pull * 18 + (ripOffset ? (dy / (dist || 1)) * ripOffset : 0);
         }
 
-        // Draw subtle lattice lines
+        // Draw Lattice Lines
         ctx.lineWidth = 1;
         for (let r = 0; r < ROWS; r++) {
           for (let c = 0; c < COLS; c++) {
@@ -2307,7 +2701,7 @@
             const n = nodes[idx];
             if (c < COLS - 1) {
               const right = nodes[idx + 1];
-              ctx.strokeStyle = 'rgba(244, 243, 239, 0.045)';
+              ctx.strokeStyle = 'rgba(244, 243, 239, 0.05)';
               ctx.beginPath();
               ctx.moveTo(n.x, n.y);
               ctx.lineTo(right.x, right.y);
@@ -2315,7 +2709,7 @@
             }
             if (r < ROWS - 1) {
               const down = nodes[idx + COLS];
-              ctx.strokeStyle = 'rgba(244, 243, 239, 0.045)';
+              ctx.strokeStyle = 'rgba(244, 243, 239, 0.05)';
               ctx.beginPath();
               ctx.moveTo(n.x, n.y);
               ctx.lineTo(down.x, down.y);
@@ -2324,19 +2718,56 @@
           }
         }
 
-        // Draw intersection nodes
+        // Synaptic Neural Signal Pulses
+        if (!motionReduced) {
+          if (tick % 36 === 0 && Math.random() > 0.3) {
+            spawnPulse();
+          }
+
+          for (let i = pulses.length - 1; i >= 0; i--) {
+            const pulse = pulses[i];
+            pulse.progress += pulse.speed;
+            if (pulse.progress >= 1) {
+              pulses.splice(i, 1);
+              continue;
+            }
+
+            const currentX = pulse.from.x + (pulse.to.x - pulse.from.x) * pulse.progress;
+            const currentY = pulse.from.y + (pulse.to.y - pulse.from.y) * pulse.progress;
+            const pAlpha = Math.sin(pulse.progress * Math.PI) * 0.9;
+
+            ctx.fillStyle = `rgba(212, 255, 51, ${pAlpha})`;
+            ctx.shadowColor = 'rgba(212, 255, 51, 0.8)';
+            ctx.shadowBlur = 8;
+            ctx.beginPath();
+            ctx.arc(currentX, currentY, 2.4, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          }
+        }
+
+        // Draw Intersection Nodes
         for (let i = 0; i < nodes.length; i++) {
           const n = nodes[i];
           const dx = n.x - px;
           const dy = n.y - py;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          const highlight = Math.max(0, 1 - dist / 260);
-          ctx.fillStyle = highlight > 0.25
-            ? `rgba(212, 255, 51, ${0.2 + highlight * 0.55})`
-            : 'rgba(244, 243, 239, 0.14)';
-          ctx.beginPath();
-          ctx.arc(n.x, n.y, highlight > 0.25 ? 2.2 : 1.3, 0, Math.PI * 2);
-          ctx.fill();
+          const highlight = Math.max(0, 1 - dist / 280);
+
+          if (highlight > 0.25) {
+            ctx.fillStyle = `rgba(212, 255, 51, ${0.25 + highlight * 0.65})`;
+            ctx.shadowColor = 'rgba(212, 255, 51, 0.5)';
+            ctx.shadowBlur = 6 * highlight;
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, 2.4 + highlight * 0.8, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          } else {
+            ctx.fillStyle = 'rgba(244, 243, 239, 0.16)';
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, 1.4, 0, Math.PI * 2);
+            ctx.fill();
+          }
         }
       }
 
@@ -2348,20 +2779,29 @@
         animId = window.requestAnimationFrame(loop);
       }
 
-      window.addEventListener('resize', resizeCanvas);
+      window.addEventListener('resize', resizeCanvas, { passive: true });
       window.addEventListener('mousemove', (e) => {
-        pointer.x = e.clientX / Math.max(window.innerWidth, 1);
-        pointer.y = e.clientY / Math.max(window.innerHeight, 1);
+        pointer.target.x = e.clientX / Math.max(window.innerWidth, 1);
+        pointer.target.y = e.clientY / Math.max(window.innerHeight, 1);
         if (motionReduced) drawFrame();
       }, { passive: true });
 
-      window.onload = function() {
-        resizeCanvas();
-        if (animId) window.cancelAnimationFrame(animId);
-        loop();
-      };
+      canvas.addEventListener('click', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        triggerRipple(e.clientX - rect.left, e.clientY - rect.top);
+      });
+
+      // Immediate & Window Load Initialization
       resizeCanvas();
+      if (animId) window.cancelAnimationFrame(animId);
+      loop();
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', resizeCanvas);
+      }
+      window.addEventListener('load', resizeCanvas);
     })();
+
   </script>
 </body>
 </html>
